@@ -1,0 +1,64 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "gcal": "https://www.googleapis.com/calendar/v3/",
+    "goog": "https://developers.google.com/workspace/calendar/api/v3/reference/",
+    "name": "schema:name",
+    "description": "schema:description",
+    "url": "schema:url",
+    "provider": "schema:provider",
+    "Calendar": {
+      "@id": "goog:calendars",
+      "@context": {
+        "id": "schema:identifier",
+        "summary": "schema:name",
+        "description": "schema:description",
+        "location": "schema:location",
+        "timeZone": "schema:timezone"
+      }
+    },
+    "Event": {
+      "@id": "goog:events",
+      "@context": {
+        "id": "schema:identifier",
+        "summary": "schema:name",
+        "description": "schema:description",
+        "location": "schema:location",
+        "start": "schema:startDate",
+        "end": "schema:endDate",
+        "created": "schema:dateCreated",
+        "updated": "schema:dateModified",
+        "status": "schema:eventStatus",
+        "htmlLink": "schema:url",
+        "attendees": "schema:attendee",
+        "organizer": "schema:organizer",
+        "recurrence": "schema:repeatFrequency"
+      }
+    },
+    "EventAttendee": {
+      "@id": "schema:Person",
+      "@context": {
+        "email": "schema:email",
+        "displayName": "schema:name",
+        "responseStatus": "schema:rsvpResponse"
+      }
+    },
+    "AclRule": {
+      "@id": "goog:acl",
+      "@context": {
+        "id": "schema:identifier",
+        "role": "schema:roleName",
+        "scope": "schema:audience"
+      }
+    }
+  },
+  "@type": "WebAPI",
+  "name": "Google Calendar API",
+  "description": "The Google Calendar API provides RESTful access to Google Calendar data for managing calendars, events, and settings.",
+  "url": "https://developers.google.com/workspace/calendar/api/guides/overview",
+  "provider": {
+    "@type": "Organization",
+    "name": "Google",
+    "url": "https://developers.google.com"
+  }
+}

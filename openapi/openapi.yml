@@ -1,0 +1,565 @@
+openapi: 3.1.0
+info:
+  title: Google Calendar API
+  description: >-
+    The Google Calendar API provides RESTful access to Google Calendar data.
+    It enables managing calendars, events, access control lists, settings,
+    and free/busy information.
+  version: v3
+  contact:
+    name: Google
+    url: https://developers.google.com/workspace/calendar/api/guides/overview
+servers:
+  - url: https://www.googleapis.com/calendar/v3
+paths:
+  /calendars:
+    post:
+      operationId: createCalendar
+      summary: Create calendar
+      description: Creates a secondary calendar.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Calendar'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Calendar'
+  /calendars/{calendarId}:
+    get:
+      operationId: getCalendar
+      summary: Get calendar
+      description: Returns metadata for a calendar.
+      parameters:
+        - name: calendarId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Calendar'
+    put:
+      operationId: updateCalendar
+      summary: Update calendar
+      description: Updates metadata for a calendar.
+      parameters:
+        - name: calendarId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Calendar'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Calendar'
+    delete:
+      operationId: deleteCalendar
+      summary: Delete calendar
+      description: Deletes a secondary calendar.
+      parameters:
+        - name: calendarId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Successful deletion
+  /calendars/{calendarId}/events:
+    get:
+      operationId: listEvents
+      summary: List events
+      description: Returns events on the specified calendar.
+      parameters:
+        - name: calendarId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: maxResults
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+        - name: timeMin
+          in: query
+          schema:
+            type: string
+            format: date-time
+        - name: timeMax
+          in: query
+          schema:
+            type: string
+            format: date-time
+        - name: q
+          in: query
+          schema:
+            type: string
+        - name: singleEvents
+          in: query
+          schema:
+            type: boolean
+        - name: orderBy
+          in: query
+          schema:
+            type: string
+            enum: [startTime, updated]
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Events'
+    post:
+      operationId: createEvent
+      summary: Create event
+      description: Creates an event.
+      parameters:
+        - name: calendarId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Event'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Event'
+  /calendars/{calendarId}/events/{eventId}:
+    get:
+      operationId: getEvent
+      summary: Get event
+      description: Returns an event.
+      parameters:
+        - name: calendarId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: eventId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Event'
+    put:
+      operationId: updateEvent
+      summary: Update event
+      description: Updates an event.
+      parameters:
+        - name: calendarId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: eventId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Event'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Event'
+    patch:
+      operationId: patchEvent
+      summary: Patch event
+      description: Updates an event with patch semantics.
+      parameters:
+        - name: calendarId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: eventId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Event'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Event'
+    delete:
+      operationId: deleteEvent
+      summary: Delete event
+      description: Deletes an event.
+      parameters:
+        - name: calendarId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: eventId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Successful deletion
+  /calendars/{calendarId}/events/quickAdd:
+    post:
+      operationId: quickAddEvent
+      summary: Quick add event
+      description: Creates an event based on a simple text string.
+      parameters:
+        - name: calendarId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: text
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Event'
+  /calendars/{calendarId}/acl:
+    get:
+      operationId: listAcl
+      summary: List ACL rules
+      description: Returns the rules in the access control list for the calendar.
+      parameters:
+        - name: calendarId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Acl'
+    post:
+      operationId: insertAcl
+      summary: Insert ACL rule
+      description: Creates an access control rule.
+      parameters:
+        - name: calendarId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AclRule'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AclRule'
+  /users/me/calendarList:
+    get:
+      operationId: listCalendarList
+      summary: List calendar list
+      description: Returns the calendars on the user's calendar list.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CalendarList'
+    post:
+      operationId: insertCalendarList
+      summary: Insert calendar to list
+      description: Inserts an existing calendar into the user's calendar list.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CalendarListEntry'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CalendarListEntry'
+  /users/me/settings:
+    get:
+      operationId: listSettings
+      summary: List settings
+      description: Returns all user settings for the authenticated user.
+      responses:
+        '200':
+          description: Successful response
+  /freeBusy:
+    post:
+      operationId: queryFreeBusy
+      summary: Query free/busy
+      description: Returns free/busy information for a set of calendars.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FreeBusyRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FreeBusyResponse'
+  /colors:
+    get:
+      operationId: getColors
+      summary: Get colors
+      description: Returns the color definitions for calendars and events.
+      responses:
+        '200':
+          description: Successful response
+components:
+  schemas:
+    Calendar:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        id:
+          type: string
+        summary:
+          type: string
+        description:
+          type: string
+        location:
+          type: string
+        timeZone:
+          type: string
+    Event:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        id:
+          type: string
+        status:
+          type: string
+        htmlLink:
+          type: string
+        created:
+          type: string
+          format: date-time
+        updated:
+          type: string
+          format: date-time
+        summary:
+          type: string
+        description:
+          type: string
+        location:
+          type: string
+        start:
+          $ref: '#/components/schemas/EventDateTime'
+        end:
+          $ref: '#/components/schemas/EventDateTime'
+        attendees:
+          type: array
+          items:
+            $ref: '#/components/schemas/EventAttendee'
+        recurrence:
+          type: array
+          items:
+            type: string
+    EventDateTime:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date
+        dateTime:
+          type: string
+          format: date-time
+        timeZone:
+          type: string
+    EventAttendee:
+      type: object
+      properties:
+        email:
+          type: string
+        displayName:
+          type: string
+        responseStatus:
+          type: string
+          enum: [needsAction, declined, tentative, accepted]
+        optional:
+          type: boolean
+    Events:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        summary:
+          type: string
+        nextPageToken:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Event'
+    AclRule:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        id:
+          type: string
+        role:
+          type: string
+          enum: [none, freeBusyReader, reader, writer, owner]
+        scope:
+          type: object
+          properties:
+            type:
+              type: string
+            value:
+              type: string
+    Acl:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/AclRule'
+    CalendarListEntry:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        id:
+          type: string
+        summary:
+          type: string
+        description:
+          type: string
+        timeZone:
+          type: string
+        backgroundColor:
+          type: string
+        foregroundColor:
+          type: string
+        selected:
+          type: boolean
+        primary:
+          type: boolean
+    CalendarList:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        nextPageToken:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/CalendarListEntry'
+    FreeBusyRequest:
+      type: object
+      properties:
+        timeMin:
+          type: string
+          format: date-time
+        timeMax:
+          type: string
+          format: date-time
+        timeZone:
+          type: string
+        items:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+    FreeBusyResponse:
+      type: object
+      properties:
+        kind:
+          type: string
+        timeMin:
+          type: string
+          format: date-time
+        timeMax:
+          type: string
+          format: date-time
+        calendars:
+          type: object

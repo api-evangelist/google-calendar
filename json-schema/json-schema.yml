@@ -1,0 +1,170 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://raw.githubusercontent.com/api-evangelist/google-calendar/refs/heads/main/json-schema/json-schema.yml
+title: Google Calendar API Schemas
+description: JSON Schema definitions for the Google Calendar API resources.
+type: object
+$defs:
+  Calendar:
+    type: object
+    title: Calendar
+    description: A Google Calendar resource.
+    properties:
+      kind:
+        type: string
+        const: calendar#calendar
+      etag:
+        type: string
+      id:
+        type: string
+        description: Identifier of the calendar.
+      summary:
+        type: string
+        description: Title of the calendar.
+      description:
+        type: string
+        description: Description of the calendar.
+      location:
+        type: string
+        description: Geographic location of the calendar.
+      timeZone:
+        type: string
+        description: The time zone of the calendar.
+  Event:
+    type: object
+    title: Calendar Event
+    description: An event on a calendar.
+    properties:
+      kind:
+        type: string
+        const: calendar#event
+      etag:
+        type: string
+      id:
+        type: string
+        description: Opaque identifier of the event.
+      status:
+        type: string
+        description: Status of the event.
+        enum: [confirmed, tentative, cancelled]
+      htmlLink:
+        type: string
+        format: uri
+        description: URL link to the event in Google Calendar.
+      created:
+        type: string
+        format: date-time
+        description: Creation time of the event.
+      updated:
+        type: string
+        format: date-time
+        description: Last modification time of the event.
+      summary:
+        type: string
+        description: Title of the event.
+      description:
+        type: string
+        description: Description of the event.
+      location:
+        type: string
+        description: Geographic location of the event.
+      start:
+        $ref: '#/$defs/EventDateTime'
+      end:
+        $ref: '#/$defs/EventDateTime'
+      recurrence:
+        type: array
+        description: RRULE, EXRULE, RDATE, and EXDATE lines for a recurring event.
+        items:
+          type: string
+      attendees:
+        type: array
+        description: The attendees of the event.
+        items:
+          $ref: '#/$defs/EventAttendee'
+      organizer:
+        type: object
+        properties:
+          email:
+            type: string
+          displayName:
+            type: string
+          self:
+            type: boolean
+      reminders:
+        type: object
+        properties:
+          useDefault:
+            type: boolean
+          overrides:
+            type: array
+            items:
+              type: object
+              properties:
+                method:
+                  type: string
+                  enum: [email, popup]
+                minutes:
+                  type: integer
+  EventDateTime:
+    type: object
+    title: Event Date Time
+    description: A date/time specification for calendar events.
+    properties:
+      date:
+        type: string
+        format: date
+        description: The date, in the format yyyy-mm-dd, if this is an all-day event.
+      dateTime:
+        type: string
+        format: date-time
+        description: The time as a combined date-time value.
+      timeZone:
+        type: string
+        description: The time zone.
+  EventAttendee:
+    type: object
+    title: Event Attendee
+    description: An attendee of a calendar event.
+    properties:
+      email:
+        type: string
+        description: The attendee's email address.
+      displayName:
+        type: string
+        description: The attendee's name.
+      responseStatus:
+        type: string
+        description: The attendee's response status.
+        enum: [needsAction, declined, tentative, accepted]
+      optional:
+        type: boolean
+        description: Whether this is an optional attendee.
+      organizer:
+        type: boolean
+        description: Whether the attendee is the organizer.
+      self:
+        type: boolean
+        description: Whether this entry represents the calendar owner.
+  AclRule:
+    type: object
+    title: ACL Rule
+    description: An access control rule for a calendar.
+    properties:
+      kind:
+        type: string
+        const: calendar#aclRule
+      etag:
+        type: string
+      id:
+        type: string
+      role:
+        type: string
+        enum: [none, freeBusyReader, reader, writer, owner]
+      scope:
+        type: object
+        properties:
+          type:
+            type: string
+            enum: [default, user, group, domain]
+          value:
+            type: string
