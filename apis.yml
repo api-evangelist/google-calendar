@@ -13,12 +13,12 @@ modified: '2026-03-16'
 specificationVersion: '0.19'
 type: Index
 tags:
+  - Availability
   - Calendar
   - Events
-  - Scheduling
   - Google
   - Google Workspace
-  - Availability
+  - Scheduling
 apis:
   - name: Google Calendar API
     description: >-
@@ -42,10 +42,10 @@ apis:
       - type: JSONLD
         url: json-ld/json-ld.jsonld
     tags:
+      - Availability
       - Calendar
       - Events
       - Scheduling
-      - Availability
 common:
   - type: Portal
     url: https://developers.google.com/workspace/calendar
