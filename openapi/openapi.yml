@@ -15,7 +15,7 @@ paths:
   /calendars:
     post:
       operationId: createCalendar
-      summary: Create calendar
+      summary: Google Calendar Create calendar
       description: Creates a secondary calendar.
       requestBody:
         content:
@@ -32,7 +32,7 @@ paths:
   /calendars/{calendarId}:
     get:
       operationId: getCalendar
-      summary: Get calendar
+      summary: Google Calendar Get calendar
       description: Returns metadata for a calendar.
       parameters:
         - name: calendarId
@@ -49,7 +49,7 @@ paths:
                 $ref: '#/components/schemas/Calendar'
     put:
       operationId: updateCalendar
-      summary: Update calendar
+      summary: Google Calendar Update calendar
       description: Updates metadata for a calendar.
       parameters:
         - name: calendarId
@@ -71,7 +71,7 @@ paths:
                 $ref: '#/components/schemas/Calendar'
     delete:
       operationId: deleteCalendar
-      summary: Delete calendar
+      summary: Google Calendar Delete calendar
       description: Deletes a secondary calendar.
       parameters:
         - name: calendarId
@@ -85,7 +85,7 @@ paths:
   /calendars/{calendarId}/events:
     get:
       operationId: listEvents
-      summary: List events
+      summary: Google Calendar List events
       description: Returns events on the specified calendar.
       parameters:
         - name: calendarId
@@ -133,7 +133,7 @@ paths:
                 $ref: '#/components/schemas/Events'
     post:
       operationId: createEvent
-      summary: Create event
+      summary: Google Calendar Create event
       description: Creates an event.
       parameters:
         - name: calendarId
@@ -156,7 +156,7 @@ paths:
   /calendars/{calendarId}/events/{eventId}:
     get:
       operationId: getEvent
-      summary: Get event
+      summary: Google Calendar Get event
       description: Returns an event.
       parameters:
         - name: calendarId
@@ -178,7 +178,7 @@ paths:
                 $ref: '#/components/schemas/Event'
     put:
       operationId: updateEvent
-      summary: Update event
+      summary: Google Calendar Update event
       description: Updates an event.
       parameters:
         - name: calendarId
@@ -205,7 +205,7 @@ paths:
                 $ref: '#/components/schemas/Event'
     patch:
       operationId: patchEvent
-      summary: Patch event
+      summary: Google Calendar Patch event
       description: Updates an event with patch semantics.
       parameters:
         - name: calendarId
@@ -232,7 +232,7 @@ paths:
                 $ref: '#/components/schemas/Event'
     delete:
       operationId: deleteEvent
-      summary: Delete event
+      summary: Google Calendar Delete event
       description: Deletes an event.
       parameters:
         - name: calendarId
@@ -251,7 +251,7 @@ paths:
   /calendars/{calendarId}/events/quickAdd:
     post:
       operationId: quickAddEvent
-      summary: Quick add event
+      summary: Google Calendar Quick add event
       description: Creates an event based on a simple text string.
       parameters:
         - name: calendarId
@@ -274,7 +274,7 @@ paths:
   /calendars/{calendarId}/acl:
     get:
       operationId: listAcl
-      summary: List ACL rules
+      summary: Google Calendar List ACL rules
       description: Returns the rules in the access control list for the calendar.
       parameters:
         - name: calendarId
@@ -291,7 +291,7 @@ paths:
                 $ref: '#/components/schemas/Acl'
     post:
       operationId: insertAcl
-      summary: Insert ACL rule
+      summary: Google Calendar Insert ACL rule
       description: Creates an access control rule.
       parameters:
         - name: calendarId
@@ -314,7 +314,7 @@ paths:
   /users/me/calendarList:
     get:
       operationId: listCalendarList
-      summary: List calendar list
+      summary: Google Calendar List calendar list
       description: Returns the calendars on the user's calendar list.
       responses:
         '200':
@@ -325,7 +325,7 @@ paths:
                 $ref: '#/components/schemas/CalendarList'
     post:
       operationId: insertCalendarList
-      summary: Insert calendar to list
+      summary: Google Calendar Insert calendar to list
       description: Inserts an existing calendar into the user's calendar list.
       requestBody:
         content:
@@ -342,7 +342,7 @@ paths:
   /users/me/settings:
     get:
       operationId: listSettings
-      summary: List settings
+      summary: Google Calendar List settings
       description: Returns all user settings for the authenticated user.
       responses:
         '200':
@@ -350,7 +350,7 @@ paths:
   /freeBusy:
     post:
       operationId: queryFreeBusy
-      summary: Query free/busy
+      summary: Google Calendar Query free/busy
       description: Returns free/busy information for a set of calendars.
       requestBody:
         content:
@@ -367,7 +367,7 @@ paths:
   /colors:
     get:
       operationId: getColors
-      summary: Get colors
+      summary: Google Calendar Get colors
       description: Returns the color definitions for calendars and events.
       responses:
         '200':
