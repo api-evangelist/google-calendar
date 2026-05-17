@@ -35,7 +35,7 @@ apis:
         url: openapi/openapi.yml
       - type: Authentication
         url: https://developers.google.com/workspace/calendar/api/auth
-      - type: Getting Started
+      - type: GettingStarted
         url: https://developers.google.com/workspace/calendar/api/quickstart/python
       - type: JSONSchema
         url: json-schema/json-schema.yml
@@ -49,7 +49,7 @@ apis:
 common:
   - type: Portal
     url: https://developers.google.com/workspace/calendar
-  - type: Getting Started
+  - type: GettingStarted
     url: https://developers.google.com/workspace/calendar/api/guides/overview
   - type: Documentation
     url: https://developers.google.com/workspace/calendar/api/reference/rest
@@ -57,11 +57,11 @@ common:
     url: https://developers.google.com/identity/protocols/oauth2
   - type: Pricing
     url: https://developers.google.com/workspace/calendar/api/guides/quota
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://developers.google.com/terms
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://policies.google.com/privacy
-  - type: Status
+  - type: StatusPage
     url: https://www.google.com/appsstatus/dashboard/
   - type: Support
     url: https://developers.google.com/workspace/calendar/api/support
