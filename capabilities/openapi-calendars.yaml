@@ -1,0 +1,620 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Calendar API — Calendars
+  description: 'Google Calendar API — Calendars. 13 operations. Lead operation: Google Calendar Create calendar. Self-contained
+    Naftiko capability covering one Google Calendar business surface.'
+  tags:
+  - Google Calendar
+  - Calendars
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CALENDAR_API_KEY: GOOGLE_CALENDAR_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openapi-calendars
+    baseUri: https://www.googleapis.com/calendar/v3
+    description: Google Calendar API — Calendars business capability. Self-contained, no shared references.
+    resources:
+    - name: calendars
+      path: /calendars
+      operations:
+      - name: createcalendar
+        method: POST
+        description: Google Calendar Create calendar
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: calendars-calendarId
+      path: /calendars/{calendarId}
+      operations:
+      - name: getcalendar
+        method: GET
+        description: Google Calendar Get calendar
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: calendarId
+          in: path
+          type: string
+          required: true
+      - name: updatecalendar
+        method: PUT
+        description: Google Calendar Update calendar
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: calendarId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+      - name: deletecalendar
+        method: DELETE
+        description: Google Calendar Delete calendar
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: calendarId
+          in: path
+          type: string
+          required: true
+    - name: calendars-calendarId-acl
+      path: /calendars/{calendarId}/acl
+      operations:
+      - name: listacl
+        method: GET
+        description: Google Calendar List ACL rules
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: calendarId
+          in: path
+          type: string
+          required: true
+      - name: insertacl
+        method: POST
+        description: Google Calendar Insert ACL rule
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: calendarId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: calendars-calendarId-events
+      path: /calendars/{calendarId}/events
+      operations:
+      - name: listevents
+        method: GET
+        description: Google Calendar List events
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: calendarId
+          in: path
+          type: string
+          required: true
+        - name: maxResults
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+        - name: timeMin
+          in: query
+          type: string
+        - name: timeMax
+          in: query
+          type: string
+        - name: q
+          in: query
+          type: string
+        - name: singleEvents
+          in: query
+          type: boolean
+        - name: orderBy
+          in: query
+          type: string
+      - name: createevent
+        method: POST
+        description: Google Calendar Create event
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: calendarId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: calendars-calendarId-events-quickAdd
+      path: /calendars/{calendarId}/events/quickAdd
+      operations:
+      - name: quickaddevent
+        method: POST
+        description: Google Calendar Quick add event
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: calendarId
+          in: path
+          type: string
+          required: true
+        - name: text
+          in: query
+          type: string
+          required: true
+    - name: calendars-calendarId-events-eventId
+      path: /calendars/{calendarId}/events/{eventId}
+      operations:
+      - name: getevent
+        method: GET
+        description: Google Calendar Get event
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: calendarId
+          in: path
+          type: string
+          required: true
+        - name: eventId
+          in: path
+          type: string
+          required: true
+      - name: updateevent
+        method: PUT
+        description: Google Calendar Update event
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: calendarId
+          in: path
+          type: string
+          required: true
+        - name: eventId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+      - name: patchevent
+        method: PATCH
+        description: Google Calendar Patch event
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: calendarId
+          in: path
+          type: string
+          required: true
+        - name: eventId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+      - name: deleteevent
+        method: DELETE
+        description: Google Calendar Delete event
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: calendarId
+          in: path
+          type: string
+          required: true
+        - name: eventId
+          in: path
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: openapi-calendars-rest
+    port: 8080
+    description: REST adapter for Google Calendar API — Calendars. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/calendars
+      name: calendars
+      description: REST surface for calendars.
+      operations:
+      - method: POST
+        name: createcalendar
+        description: Google Calendar Create calendar
+        call: openapi-calendars.createcalendar
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/calendars/{calendarid}
+      name: calendars-calendarid
+      description: REST surface for calendars-calendarId.
+      operations:
+      - method: GET
+        name: getcalendar
+        description: Google Calendar Get calendar
+        call: openapi-calendars.getcalendar
+        with:
+          calendarId: rest.calendarId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updatecalendar
+        description: Google Calendar Update calendar
+        call: openapi-calendars.updatecalendar
+        with:
+          calendarId: rest.calendarId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletecalendar
+        description: Google Calendar Delete calendar
+        call: openapi-calendars.deletecalendar
+        with:
+          calendarId: rest.calendarId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/calendars/{calendarid}/acl
+      name: calendars-calendarid-acl
+      description: REST surface for calendars-calendarId-acl.
+      operations:
+      - method: GET
+        name: listacl
+        description: Google Calendar List ACL rules
+        call: openapi-calendars.listacl
+        with:
+          calendarId: rest.calendarId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: insertacl
+        description: Google Calendar Insert ACL rule
+        call: openapi-calendars.insertacl
+        with:
+          calendarId: rest.calendarId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/calendars/{calendarid}/events
+      name: calendars-calendarid-events
+      description: REST surface for calendars-calendarId-events.
+      operations:
+      - method: GET
+        name: listevents
+        description: Google Calendar List events
+        call: openapi-calendars.listevents
+        with:
+          calendarId: rest.calendarId
+          maxResults: rest.maxResults
+          pageToken: rest.pageToken
+          timeMin: rest.timeMin
+          timeMax: rest.timeMax
+          q: rest.q
+          singleEvents: rest.singleEvents
+          orderBy: rest.orderBy
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createevent
+        description: Google Calendar Create event
+        call: openapi-calendars.createevent
+        with:
+          calendarId: rest.calendarId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/calendars/{calendarid}/events/quickadd
+      name: calendars-calendarid-events-quickadd
+      description: REST surface for calendars-calendarId-events-quickAdd.
+      operations:
+      - method: POST
+        name: quickaddevent
+        description: Google Calendar Quick add event
+        call: openapi-calendars.quickaddevent
+        with:
+          calendarId: rest.calendarId
+          text: rest.text
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/calendars/{calendarid}/events/{eventid}
+      name: calendars-calendarid-events-eventid
+      description: REST surface for calendars-calendarId-events-eventId.
+      operations:
+      - method: GET
+        name: getevent
+        description: Google Calendar Get event
+        call: openapi-calendars.getevent
+        with:
+          calendarId: rest.calendarId
+          eventId: rest.eventId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updateevent
+        description: Google Calendar Update event
+        call: openapi-calendars.updateevent
+        with:
+          calendarId: rest.calendarId
+          eventId: rest.eventId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patchevent
+        description: Google Calendar Patch event
+        call: openapi-calendars.patchevent
+        with:
+          calendarId: rest.calendarId
+          eventId: rest.eventId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deleteevent
+        description: Google Calendar Delete event
+        call: openapi-calendars.deleteevent
+        with:
+          calendarId: rest.calendarId
+          eventId: rest.eventId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openapi-calendars-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Calendar API — Calendars. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: google-calendar-create-calendar
+      description: Google Calendar Create calendar
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: openapi-calendars.createcalendar
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-calendar-get-calendar
+      description: Google Calendar Get calendar
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-calendars.getcalendar
+      with:
+        calendarId: tools.calendarId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-calendar-update-calendar
+      description: Google Calendar Update calendar
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: openapi-calendars.updatecalendar
+      with:
+        calendarId: tools.calendarId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-calendar-delete-calendar
+      description: Google Calendar Delete calendar
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: openapi-calendars.deletecalendar
+      with:
+        calendarId: tools.calendarId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-calendar-list-acl-rules
+      description: Google Calendar List ACL rules
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-calendars.listacl
+      with:
+        calendarId: tools.calendarId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-calendar-insert-acl-rule
+      description: Google Calendar Insert ACL rule
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: openapi-calendars.insertacl
+      with:
+        calendarId: tools.calendarId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-calendar-list-events
+      description: Google Calendar List events
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-calendars.listevents
+      with:
+        calendarId: tools.calendarId
+        maxResults: tools.maxResults
+        pageToken: tools.pageToken
+        timeMin: tools.timeMin
+        timeMax: tools.timeMax
+        q: tools.q
+        singleEvents: tools.singleEvents
+        orderBy: tools.orderBy
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-calendar-create-event
+      description: Google Calendar Create event
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: openapi-calendars.createevent
+      with:
+        calendarId: tools.calendarId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-calendar-quick-add-event
+      description: Google Calendar Quick add event
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: openapi-calendars.quickaddevent
+      with:
+        calendarId: tools.calendarId
+        text: tools.text
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-calendar-get-event
+      description: Google Calendar Get event
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-calendars.getevent
+      with:
+        calendarId: tools.calendarId
+        eventId: tools.eventId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-calendar-update-event
+      description: Google Calendar Update event
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: openapi-calendars.updateevent
+      with:
+        calendarId: tools.calendarId
+        eventId: tools.eventId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-calendar-patch-event
+      description: Google Calendar Patch event
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: openapi-calendars.patchevent
+      with:
+        calendarId: tools.calendarId
+        eventId: tools.eventId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-calendar-delete-event
+      description: Google Calendar Delete event
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: openapi-calendars.deleteevent
+      with:
+        calendarId: tools.calendarId
+        eventId: tools.eventId
+      outputParameters:
+      - type: object
+        mapping: $.

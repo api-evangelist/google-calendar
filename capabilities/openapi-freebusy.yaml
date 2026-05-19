@@ -1,0 +1,77 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Calendar API — freeBusy
+  description: 'Google Calendar API — freeBusy. 1 operations. Lead operation: Google Calendar Query free/busy. Self-contained
+    Naftiko capability covering one Google Calendar business surface.'
+  tags:
+  - Google Calendar
+  - freeBusy
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CALENDAR_API_KEY: GOOGLE_CALENDAR_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openapi-freebusy
+    baseUri: https://www.googleapis.com/calendar/v3
+    description: Google Calendar API — freeBusy business capability. Self-contained, no shared references.
+    resources:
+    - name: freeBusy
+      path: /freeBusy
+      operations:
+      - name: queryfreebusy
+        method: POST
+        description: Google Calendar Query free/busy
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: openapi-freebusy-rest
+    port: 8080
+    description: REST adapter for Google Calendar API — freeBusy. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/freebusy
+      name: freebusy
+      description: REST surface for freeBusy.
+      operations:
+      - method: POST
+        name: queryfreebusy
+        description: Google Calendar Query free/busy
+        call: openapi-freebusy.queryfreebusy
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openapi-freebusy-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Calendar API — freeBusy. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: google-calendar-query-free-busy
+      description: Google Calendar Query free/busy
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: openapi-freebusy.queryfreebusy
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

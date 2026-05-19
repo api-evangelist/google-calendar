@@ -1,0 +1,134 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Calendar API — Users
+  description: 'Google Calendar API — Users. 3 operations. Lead operation: Google Calendar List calendar list. Self-contained
+    Naftiko capability covering one Google Calendar business surface.'
+  tags:
+  - Google Calendar
+  - Users
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CALENDAR_API_KEY: GOOGLE_CALENDAR_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openapi-users
+    baseUri: https://www.googleapis.com/calendar/v3
+    description: Google Calendar API — Users business capability. Self-contained, no shared references.
+    resources:
+    - name: users-me-calendarList
+      path: /users/me/calendarList
+      operations:
+      - name: listcalendarlist
+        method: GET
+        description: Google Calendar List calendar list
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: insertcalendarlist
+        method: POST
+        description: Google Calendar Insert calendar to list
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: users-me-settings
+      path: /users/me/settings
+      operations:
+      - name: listsettings
+        method: GET
+        description: Google Calendar List settings
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: openapi-users-rest
+    port: 8080
+    description: REST adapter for Google Calendar API — Users. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/users/me/calendarlist
+      name: users-me-calendarlist
+      description: REST surface for users-me-calendarList.
+      operations:
+      - method: GET
+        name: listcalendarlist
+        description: Google Calendar List calendar list
+        call: openapi-users.listcalendarlist
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: insertcalendarlist
+        description: Google Calendar Insert calendar to list
+        call: openapi-users.insertcalendarlist
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/users/me/settings
+      name: users-me-settings
+      description: REST surface for users-me-settings.
+      operations:
+      - method: GET
+        name: listsettings
+        description: Google Calendar List settings
+        call: openapi-users.listsettings
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openapi-users-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Calendar API — Users. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: google-calendar-list-calendar-list
+      description: Google Calendar List calendar list
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-users.listcalendarlist
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-calendar-insert-calendar-list
+      description: Google Calendar Insert calendar to list
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: openapi-users.insertcalendarlist
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-calendar-list-settings
+      description: Google Calendar List settings
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-users.listsettings
+      outputParameters:
+      - type: object
+        mapping: $.
