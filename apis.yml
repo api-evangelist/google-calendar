@@ -45,6 +45,10 @@ apis:
       - Events
       - Scheduling
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-calendar-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-calendar-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/googleworkspace
   - type: Portal
