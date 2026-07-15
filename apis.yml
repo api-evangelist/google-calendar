@@ -45,6 +45,8 @@ apis:
       - Events
       - Scheduling
 common:
+  - type: AgenticAccess
+    url: agentic-access/google-calendar-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/google-calendar-vulnerability-disclosure.yml
   - type: DomainSecurity
