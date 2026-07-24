@@ -1,0 +1,93 @@
+openapi: 3.1.0
+info:
+  title: Google Calendar Calendars Users API
+  description: The Google Calendar API provides RESTful access to Google Calendar data. It enables managing calendars, events, access control lists, settings, and free/busy information.
+  version: v3
+  contact:
+    name: Google
+    url: https://developers.google.com/workspace/calendar/api/guides/overview
+servers:
+- url: https://www.googleapis.com/calendar/v3
+tags:
+- name: Users
+paths:
+  /users/me/calendarList:
+    get:
+      operationId: listCalendarList
+      summary: Google Calendar List calendar list
+      description: Returns the calendars on the user's calendar list.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CalendarList'
+      tags:
+      - Users
+    post:
+      operationId: insertCalendarList
+      summary: Google Calendar Insert calendar to list
+      description: Inserts an existing calendar into the user's calendar list.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CalendarListEntry'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CalendarListEntry'
+      tags:
+      - Users
+  /users/me/settings:
+    get:
+      operationId: listSettings
+      summary: Google Calendar List settings
+      description: Returns all user settings for the authenticated user.
+      responses:
+        '200':
+          description: Successful response
+      tags:
+      - Users
+components:
+  schemas:
+    CalendarList:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        nextPageToken:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/CalendarListEntry'
+    CalendarListEntry:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        id:
+          type: string
+        summary:
+          type: string
+        description:
+          type: string
+        timeZone:
+          type: string
+        backgroundColor:
+          type: string
+        foregroundColor:
+          type: string
+        selected:
+          type: boolean
+        primary:
+          type: boolean

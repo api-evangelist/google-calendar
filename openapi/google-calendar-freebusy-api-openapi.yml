@@ -1,0 +1,65 @@
+openapi: 3.1.0
+info:
+  title: Google Calendar Calendars freeBusy API
+  description: The Google Calendar API provides RESTful access to Google Calendar data. It enables managing calendars, events, access control lists, settings, and free/busy information.
+  version: v3
+  contact:
+    name: Google
+    url: https://developers.google.com/workspace/calendar/api/guides/overview
+servers:
+- url: https://www.googleapis.com/calendar/v3
+tags:
+- name: freeBusy
+paths:
+  /freeBusy:
+    post:
+      operationId: queryFreeBusy
+      summary: Google Calendar Query free/busy
+      description: Returns free/busy information for a set of calendars.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FreeBusyRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FreeBusyResponse'
+      tags:
+      - freeBusy
+components:
+  schemas:
+    FreeBusyResponse:
+      type: object
+      properties:
+        kind:
+          type: string
+        timeMin:
+          type: string
+          format: date-time
+        timeMax:
+          type: string
+          format: date-time
+        calendars:
+          type: object
+    FreeBusyRequest:
+      type: object
+      properties:
+        timeMin:
+          type: string
+          format: date-time
+        timeMax:
+          type: string
+          format: date-time
+        timeZone:
+          type: string
+        items:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string

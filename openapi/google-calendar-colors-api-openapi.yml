@@ -1,0 +1,23 @@
+openapi: 3.1.0
+info:
+  title: Google Calendar Calendars Colors API
+  description: The Google Calendar API provides RESTful access to Google Calendar data. It enables managing calendars, events, access control lists, settings, and free/busy information.
+  version: v3
+  contact:
+    name: Google
+    url: https://developers.google.com/workspace/calendar/api/guides/overview
+servers:
+- url: https://www.googleapis.com/calendar/v3
+tags:
+- name: Colors
+paths:
+  /colors:
+    get:
+      operationId: getColors
+      summary: Google Calendar Get colors
+      description: Returns the color definitions for calendars and events.
+      responses:
+        '200':
+          description: Successful response
+      tags:
+      - Colors
