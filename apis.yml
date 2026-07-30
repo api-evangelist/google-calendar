@@ -5,7 +5,19 @@ description: >-
   manage calendar events, access control lists, and user settings. It supports creating and managing multiple calendars,
   querying free/busy information, setting up push notifications for changes, and integrating calendar functionality into
   third-party applications.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/google-calendar.png
 url: https://raw.githubusercontent.com/api-evangelist/google-calendar/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -19,32 +31,89 @@ tags:
   - Google Workspace
   - Scheduling
 apis:
-  - name: Google Calendar API
-    description: >-
-      The Google Calendar API lets you manage calendars, events, access control, settings, and free/busy information. It
-      supports creating events, subscribing to calendars, querying availability, and receiving push notifications for
-      changes.
-    humanURL: https://developers.google.com/workspace/calendar/api/guides/overview
-    baseURL: https://www.googleapis.com/calendar/v3
-    properties:
-      - type: Documentation
-        url: https://developers.google.com/workspace/calendar/api/guides/overview
-      - type: OpenAPI
-        url: openapi/openapi.yml
-      - type: Authentication
-        url: https://developers.google.com/workspace/calendar/api/auth
-      - type: GettingStarted
-        url: https://developers.google.com/workspace/calendar/api/quickstart/python
-      - type: JSONSchema
-        url: json-schema/json-schema.yml
-      - type: JSONLD
-        url: json-ld/json-ld.jsonld
-    tags:
-      - Availability
-      - Calendar
-      - Events
-      - Scheduling
+- aid: google-calendar:google-calendar-calendars-api
+  name: Google Calendar Calendars API
+  description: The Calendars API from Google Calendar — 6 operation(s) for calendars.
+  humanURL: https://developers.google.com/workspace/calendar/api/guides/overview
+  baseURL: https://www.googleapis.com/calendar/v3
+  tags:
+  - Calendars
+  properties:
+  - type: OpenAPI
+    url: openapi/google-calendar-calendars-api-openapi.yml
+  - type: Documentation
+    url: https://developers.google.com/workspace/calendar/api/guides/overview
+  - type: Authentication
+    url: https://developers.google.com/workspace/calendar/api/auth
+  - type: GettingStarted
+    url: https://developers.google.com/workspace/calendar/api/quickstart/python
+  - type: JSONSchema
+    url: json-schema/json-schema.yml
+  - type: JSONLD
+    url: json-ld/json-ld.jsonld
+- aid: google-calendar:google-calendar-colors-api
+  name: Google Calendar Colors API
+  description: The Colors API from Google Calendar — 1 operation(s) for colors.
+  humanURL: https://developers.google.com/workspace/calendar/api/guides/overview
+  baseURL: https://www.googleapis.com/calendar/v3
+  tags:
+  - Colors
+  properties:
+  - type: OpenAPI
+    url: openapi/google-calendar-colors-api-openapi.yml
+  - type: Documentation
+    url: https://developers.google.com/workspace/calendar/api/guides/overview
+  - type: Authentication
+    url: https://developers.google.com/workspace/calendar/api/auth
+  - type: GettingStarted
+    url: https://developers.google.com/workspace/calendar/api/quickstart/python
+  - type: JSONSchema
+    url: json-schema/json-schema.yml
+  - type: JSONLD
+    url: json-ld/json-ld.jsonld
+- aid: google-calendar:google-calendar-freebusy-api
+  name: Google Calendar freeBusy API
+  description: The freeBusy API from Google Calendar — 1 operation(s) for freebusy.
+  humanURL: https://developers.google.com/workspace/calendar/api/guides/overview
+  baseURL: https://www.googleapis.com/calendar/v3
+  tags:
+  - freeBusy
+  properties:
+  - type: OpenAPI
+    url: openapi/google-calendar-freebusy-api-openapi.yml
+  - type: Documentation
+    url: https://developers.google.com/workspace/calendar/api/guides/overview
+  - type: Authentication
+    url: https://developers.google.com/workspace/calendar/api/auth
+  - type: GettingStarted
+    url: https://developers.google.com/workspace/calendar/api/quickstart/python
+  - type: JSONSchema
+    url: json-schema/json-schema.yml
+  - type: JSONLD
+    url: json-ld/json-ld.jsonld
+- aid: google-calendar:google-calendar-users-api
+  name: Google Calendar Users API
+  description: The Users API from Google Calendar — 2 operation(s) for users.
+  humanURL: https://developers.google.com/workspace/calendar/api/guides/overview
+  baseURL: https://www.googleapis.com/calendar/v3
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/google-calendar-users-api-openapi.yml
+  - type: Documentation
+    url: https://developers.google.com/workspace/calendar/api/guides/overview
+  - type: Authentication
+    url: https://developers.google.com/workspace/calendar/api/auth
+  - type: GettingStarted
+    url: https://developers.google.com/workspace/calendar/api/quickstart/python
+  - type: JSONSchema
+    url: json-schema/json-schema.yml
+  - type: JSONLD
+    url: json-ld/json-ld.jsonld
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/google-calendar/overview
   - type: AgenticAccess
     url: agentic-access/google-calendar-agentic-access.yml
   - type: VulnerabilityDisclosure
