@@ -1,0 +1,20 @@
+{
+  "provider": "google-calendar",
+  "sources": [
+    "google-calendar-calendars-api-openapi.yml",
+    "google-calendar-colors-api-openapi.yml",
+    "google-calendar-freebusy-api-openapi.yml",
+    "google-calendar-users-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-calendar-calendars-api-openapi.yml",
+    "google-calendar-colors-api-openapi.yml",
+    "google-calendar-freebusy-api-openapi.yml",
+    "google-calendar-users-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

@@ -1,0 +1,82 @@
+{
+  "info": {
+    "_postman_id": "4d3f48b2-0a15-4e9f-a074-7bbd369e02bc",
+    "name": "Google Calendar Calendars Colors API",
+    "description": "The Google Calendar API provides RESTful access to Google Calendar data. It enables managing calendars, events, access control lists, settings, and free/busy information.\n\nContact Support:\n Name: Google",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:45:14.000Z",
+    "updatedAt": "2026-07-28T01:45:14.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-4d3f48b2-0a15-4e9f-a074-7bbd369e02bc"
+  },
+  "item": [
+    {
+      "name": "colors",
+      "item": [
+        {
+          "name": "Google Calendar Get colors",
+          "id": "3227156a-53ea-4525-9de6-fc8299de2c82",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/colors",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "colors"
+              ]
+            },
+            "description": "Returns the color definitions for calendars and events."
+          },
+          "response": [
+            {
+              "id": "3deca0fa-6f1e-4250-a2e8-eacc533aeec4",
+              "name": "Successful response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/colors",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "colors"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:45:14.000Z",
+              "updatedAt": "2026-07-28T01:45:14.000Z",
+              "uid": "35240-3deca0fa-6f1e-4250-a2e8-eacc533aeec4"
+            }
+          ],
+          "createdAt": "2026-07-28T01:45:14.000Z",
+          "updatedAt": "2026-07-28T01:45:14.000Z",
+          "uid": "35240-3227156a-53ea-4525-9de6-fc8299de2c82"
+        }
+      ],
+      "id": "b1bb9ecf-5ad0-4ab5-b449-0db810580304",
+      "createdAt": "2026-07-28T01:45:14.000Z",
+      "updatedAt": "2026-07-28T01:45:14.000Z",
+      "uid": "35240-b1bb9ecf-5ad0-4ab5-b449-0db810580304"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://www.googleapis.com/calendar/v3"
+    }
+  ]
+}

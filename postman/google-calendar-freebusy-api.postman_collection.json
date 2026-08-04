@@ -1,0 +1,125 @@
+{
+  "info": {
+    "_postman_id": "46d933e7-29af-46f2-aa99-c99ac63a073e",
+    "name": "Google Calendar Calendars freeBusy API",
+    "description": "The Google Calendar API provides RESTful access to Google Calendar data. It enables managing calendars, events, access control lists, settings, and free/busy information.\n\nContact Support:\n Name: Google",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:45:15.000Z",
+    "updatedAt": "2026-07-28T01:45:15.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-46d933e7-29af-46f2-aa99-c99ac63a073e"
+  },
+  "item": [
+    {
+      "name": "freeBusy",
+      "item": [
+        {
+          "name": "Google Calendar Query free/busy",
+          "id": "ed368be9-bf7b-4b81-9803-ef7e943ab3ec",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"timeMin\": \"<dateTime>\",\n  \"timeMax\": \"<dateTime>\",\n  \"timeZone\": \"<string>\",\n  \"items\": [\n    {\n      \"id\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/freeBusy",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "freeBusy"
+              ]
+            },
+            "description": "Returns free/busy information for a set of calendars."
+          },
+          "response": [
+            {
+              "id": "76091836-446a-42a5-9afa-b91c36a6b3e0",
+              "name": "Successful response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"timeMin\": \"<dateTime>\",\n  \"timeMax\": \"<dateTime>\",\n  \"timeZone\": \"<string>\",\n  \"items\": [\n    {\n      \"id\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/freeBusy",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "freeBusy"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"kind\": \"<string>\",\n  \"timeMin\": \"<dateTime>\",\n  \"timeMax\": \"<dateTime>\",\n  \"calendars\": {}\n}",
+              "createdAt": "2026-07-28T01:45:15.000Z",
+              "updatedAt": "2026-07-28T01:45:15.000Z",
+              "uid": "35240-76091836-446a-42a5-9afa-b91c36a6b3e0"
+            }
+          ],
+          "createdAt": "2026-07-28T01:45:15.000Z",
+          "updatedAt": "2026-07-28T01:45:15.000Z",
+          "uid": "35240-ed368be9-bf7b-4b81-9803-ef7e943ab3ec"
+        }
+      ],
+      "id": "91743923-c4bc-469c-be90-e061b70a248b",
+      "createdAt": "2026-07-28T01:45:15.000Z",
+      "updatedAt": "2026-07-28T01:45:15.000Z",
+      "uid": "35240-91743923-c4bc-469c-be90-e061b70a248b"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://www.googleapis.com/calendar/v3"
+    }
+  ]
+}

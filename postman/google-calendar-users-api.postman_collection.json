@@ -1,0 +1,285 @@
+{
+  "info": {
+    "_postman_id": "c8e9705b-921c-4c55-a647-c4e4c84f6e95",
+    "name": "Google Calendar Calendars Users API",
+    "description": "The Google Calendar API provides RESTful access to Google Calendar data. It enables managing calendars, events, access control lists, settings, and free/busy information.\n\nContact Support:\n Name: Google",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:45:16.000Z",
+    "updatedAt": "2026-07-28T01:45:16.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-c8e9705b-921c-4c55-a647-c4e4c84f6e95"
+  },
+  "item": [
+    {
+      "name": "users",
+      "item": [
+        {
+          "name": "me",
+          "item": [
+            {
+              "name": "calendarList",
+              "item": [
+                {
+                  "name": "Google Calendar List calendar list",
+                  "id": "655abff7-5093-4bd5-a946-b6dd4c15ba53",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/users/me/calendarList",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "users",
+                        "me",
+                        "calendarList"
+                      ]
+                    },
+                    "description": "Returns the calendars on the user's calendar list."
+                  },
+                  "response": [
+                    {
+                      "id": "50be159c-73a5-432e-9fed-72f4cbd9a273",
+                      "name": "Successful response",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/users/me/calendarList",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "users",
+                            "me",
+                            "calendarList"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"nextPageToken\": \"<string>\",\n  \"items\": [\n    {\n      \"kind\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"id\": \"<string>\",\n      \"summary\": \"<string>\",\n      \"description\": \"<string>\",\n      \"timeZone\": \"<string>\",\n      \"backgroundColor\": \"<string>\",\n      \"foregroundColor\": \"<string>\",\n      \"selected\": \"<boolean>\",\n      \"primary\": \"<boolean>\"\n    },\n    {\n      \"kind\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"id\": \"<string>\",\n      \"summary\": \"<string>\",\n      \"description\": \"<string>\",\n      \"timeZone\": \"<string>\",\n      \"backgroundColor\": \"<string>\",\n      \"foregroundColor\": \"<string>\",\n      \"selected\": \"<boolean>\",\n      \"primary\": \"<boolean>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T01:45:16.000Z",
+                      "updatedAt": "2026-07-28T01:45:16.000Z",
+                      "uid": "35240-50be159c-73a5-432e-9fed-72f4cbd9a273"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:45:16.000Z",
+                  "updatedAt": "2026-07-28T01:45:16.000Z",
+                  "uid": "35240-655abff7-5093-4bd5-a946-b6dd4c15ba53"
+                },
+                {
+                  "name": "Google Calendar Insert calendar to list",
+                  "id": "c57266dc-a1b0-4cc6-aac3-52c4f534af02",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"id\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"description\": \"<string>\",\n  \"timeZone\": \"<string>\",\n  \"backgroundColor\": \"<string>\",\n  \"foregroundColor\": \"<string>\",\n  \"selected\": \"<boolean>\",\n  \"primary\": \"<boolean>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/users/me/calendarList",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "users",
+                        "me",
+                        "calendarList"
+                      ]
+                    },
+                    "description": "Inserts an existing calendar into the user's calendar list."
+                  },
+                  "response": [
+                    {
+                      "id": "f643c953-f894-45b7-a48e-60603f374b3e",
+                      "name": "Successful response",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"id\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"description\": \"<string>\",\n  \"timeZone\": \"<string>\",\n  \"backgroundColor\": \"<string>\",\n  \"foregroundColor\": \"<string>\",\n  \"selected\": \"<boolean>\",\n  \"primary\": \"<boolean>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/users/me/calendarList",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "users",
+                            "me",
+                            "calendarList"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"id\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"description\": \"<string>\",\n  \"timeZone\": \"<string>\",\n  \"backgroundColor\": \"<string>\",\n  \"foregroundColor\": \"<string>\",\n  \"selected\": \"<boolean>\",\n  \"primary\": \"<boolean>\"\n}",
+                      "createdAt": "2026-07-28T01:45:16.000Z",
+                      "updatedAt": "2026-07-28T01:45:16.000Z",
+                      "uid": "35240-f643c953-f894-45b7-a48e-60603f374b3e"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:45:16.000Z",
+                  "updatedAt": "2026-07-28T01:45:16.000Z",
+                  "uid": "35240-c57266dc-a1b0-4cc6-aac3-52c4f534af02"
+                }
+              ],
+              "id": "47eb54ec-3aaa-48da-bc63-ba4baedc4f64",
+              "createdAt": "2026-07-28T01:45:16.000Z",
+              "updatedAt": "2026-07-28T01:45:16.000Z",
+              "uid": "35240-47eb54ec-3aaa-48da-bc63-ba4baedc4f64"
+            },
+            {
+              "name": "settings",
+              "item": [
+                {
+                  "name": "Google Calendar List settings",
+                  "id": "ea25615b-5fe6-49ab-938b-e067eb38a93a",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/users/me/settings",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "users",
+                        "me",
+                        "settings"
+                      ]
+                    },
+                    "description": "Returns all user settings for the authenticated user."
+                  },
+                  "response": [
+                    {
+                      "id": "65cd8cb6-eb77-4775-a88d-36fe72ca6693",
+                      "name": "Successful response",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/users/me/settings",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "users",
+                            "me",
+                            "settings"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:45:16.000Z",
+                      "updatedAt": "2026-07-28T01:45:16.000Z",
+                      "uid": "35240-65cd8cb6-eb77-4775-a88d-36fe72ca6693"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:45:16.000Z",
+                  "updatedAt": "2026-07-28T01:45:16.000Z",
+                  "uid": "35240-ea25615b-5fe6-49ab-938b-e067eb38a93a"
+                }
+              ],
+              "id": "02fefff1-5049-42c9-aa49-221a66b51b58",
+              "createdAt": "2026-07-28T01:45:16.000Z",
+              "updatedAt": "2026-07-28T01:45:16.000Z",
+              "uid": "35240-02fefff1-5049-42c9-aa49-221a66b51b58"
+            }
+          ],
+          "id": "bbef8854-e461-4d5e-931c-e833337afc01",
+          "createdAt": "2026-07-28T01:45:16.000Z",
+          "updatedAt": "2026-07-28T01:45:16.000Z",
+          "uid": "35240-bbef8854-e461-4d5e-931c-e833337afc01"
+        }
+      ],
+      "id": "6e81c717-e664-4a38-a654-babdef9419ff",
+      "createdAt": "2026-07-28T01:45:16.000Z",
+      "updatedAt": "2026-07-28T01:45:16.000Z",
+      "uid": "35240-6e81c717-e664-4a38-a654-babdef9419ff"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://www.googleapis.com/calendar/v3"
+    }
+  ]
+}

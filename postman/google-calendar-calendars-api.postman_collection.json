@@ -1,0 +1,1414 @@
+{
+  "info": {
+    "_postman_id": "ff60f187-2721-4197-ae67-43c21c1ee535",
+    "name": "Google Calendar Calendars API",
+    "description": "The Google Calendar API provides RESTful access to Google Calendar data. It enables managing calendars, events, access control lists, settings, and free/busy information.\n\nContact Support:\n Name: Google",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:45:13.000Z",
+    "updatedAt": "2026-07-28T01:45:13.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-ff60f187-2721-4197-ae67-43c21c1ee535"
+  },
+  "item": [
+    {
+      "name": "calendars",
+      "item": [
+        {
+          "name": "{calendarId}",
+          "item": [
+            {
+              "name": "events",
+              "item": [
+                {
+                  "name": "{eventId}",
+                  "item": [
+                    {
+                      "name": "Google Calendar Get event",
+                      "id": "0ee1a6d5-c664-4b38-8209-e1672a926e0e",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/calendars/:calendarId/events/:eventId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "calendars",
+                            ":calendarId",
+                            "events",
+                            ":eventId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "4ca1f1be-1acc-49f7-8a42-870cdaaed6e6",
+                              "key": "calendarId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            },
+                            {
+                              "id": "c2fa0272-268f-4ada-8567-4fa8d64283db",
+                              "key": "eventId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Returns an event."
+                      },
+                      "response": [
+                        {
+                          "id": "be14e861-0f48-430a-a61f-1fb126cd2b7b",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/calendars/:calendarId/events/:eventId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "calendars",
+                                ":calendarId",
+                                "events",
+                                ":eventId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "calendarId"
+                                },
+                                {
+                                  "key": "eventId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"id\": \"<string>\",\n  \"status\": \"<string>\",\n  \"htmlLink\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"updated\": \"<dateTime>\",\n  \"summary\": \"<string>\",\n  \"description\": \"<string>\",\n  \"location\": \"<string>\",\n  \"start\": {\n    \"date\": \"<date>\",\n    \"dateTime\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  \"end\": {\n    \"date\": \"<date>\",\n    \"dateTime\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  \"attendees\": [\n    {\n      \"email\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"responseStatus\": \"needsAction\",\n      \"optional\": \"<boolean>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"responseStatus\": \"needsAction\",\n      \"optional\": \"<boolean>\"\n    }\n  ],\n  \"recurrence\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                          "createdAt": "2026-07-28T01:45:13.000Z",
+                          "updatedAt": "2026-07-28T01:45:13.000Z",
+                          "uid": "35240-be14e861-0f48-430a-a61f-1fb126cd2b7b"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:45:13.000Z",
+                      "updatedAt": "2026-07-28T01:45:13.000Z",
+                      "uid": "35240-0ee1a6d5-c664-4b38-8209-e1672a926e0e"
+                    },
+                    {
+                      "name": "Google Calendar Update event",
+                      "id": "307c8c7f-b900-4dae-8bf4-8f002b81a3e1",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"id\": \"<string>\",\n  \"status\": \"<string>\",\n  \"htmlLink\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"updated\": \"<dateTime>\",\n  \"summary\": \"<string>\",\n  \"description\": \"<string>\",\n  \"location\": \"<string>\",\n  \"start\": {\n    \"date\": \"<date>\",\n    \"dateTime\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  \"end\": {\n    \"date\": \"<date>\",\n    \"dateTime\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  \"attendees\": [\n    {\n      \"email\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"responseStatus\": \"needsAction\",\n      \"optional\": \"<boolean>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"responseStatus\": \"needsAction\",\n      \"optional\": \"<boolean>\"\n    }\n  ],\n  \"recurrence\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/calendars/:calendarId/events/:eventId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "calendars",
+                            ":calendarId",
+                            "events",
+                            ":eventId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "a6be09c2-7aa1-42cd-9169-81a78e74402c",
+                              "key": "calendarId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            },
+                            {
+                              "id": "e860e202-9904-442d-823d-e1460267e06c",
+                              "key": "eventId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Updates an event."
+                      },
+                      "response": [
+                        {
+                          "id": "3a832b99-22c1-4cf2-9cf7-38f4d2ced110",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"id\": \"<string>\",\n  \"status\": \"<string>\",\n  \"htmlLink\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"updated\": \"<dateTime>\",\n  \"summary\": \"<string>\",\n  \"description\": \"<string>\",\n  \"location\": \"<string>\",\n  \"start\": {\n    \"date\": \"<date>\",\n    \"dateTime\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  \"end\": {\n    \"date\": \"<date>\",\n    \"dateTime\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  \"attendees\": [\n    {\n      \"email\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"responseStatus\": \"needsAction\",\n      \"optional\": \"<boolean>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"responseStatus\": \"needsAction\",\n      \"optional\": \"<boolean>\"\n    }\n  ],\n  \"recurrence\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/calendars/:calendarId/events/:eventId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "calendars",
+                                ":calendarId",
+                                "events",
+                                ":eventId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "calendarId"
+                                },
+                                {
+                                  "key": "eventId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"id\": \"<string>\",\n  \"status\": \"<string>\",\n  \"htmlLink\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"updated\": \"<dateTime>\",\n  \"summary\": \"<string>\",\n  \"description\": \"<string>\",\n  \"location\": \"<string>\",\n  \"start\": {\n    \"date\": \"<date>\",\n    \"dateTime\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  \"end\": {\n    \"date\": \"<date>\",\n    \"dateTime\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  \"attendees\": [\n    {\n      \"email\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"responseStatus\": \"needsAction\",\n      \"optional\": \"<boolean>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"responseStatus\": \"needsAction\",\n      \"optional\": \"<boolean>\"\n    }\n  ],\n  \"recurrence\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                          "createdAt": "2026-07-28T01:45:13.000Z",
+                          "updatedAt": "2026-07-28T01:45:13.000Z",
+                          "uid": "35240-3a832b99-22c1-4cf2-9cf7-38f4d2ced110"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:45:13.000Z",
+                      "updatedAt": "2026-07-28T01:45:13.000Z",
+                      "uid": "35240-307c8c7f-b900-4dae-8bf4-8f002b81a3e1"
+                    },
+                    {
+                      "name": "Google Calendar Patch event",
+                      "id": "4134fa9e-341e-4212-84ad-05886f3843fc",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PATCH",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"id\": \"<string>\",\n  \"status\": \"<string>\",\n  \"htmlLink\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"updated\": \"<dateTime>\",\n  \"summary\": \"<string>\",\n  \"description\": \"<string>\",\n  \"location\": \"<string>\",\n  \"start\": {\n    \"date\": \"<date>\",\n    \"dateTime\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  \"end\": {\n    \"date\": \"<date>\",\n    \"dateTime\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  \"attendees\": [\n    {\n      \"email\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"responseStatus\": \"needsAction\",\n      \"optional\": \"<boolean>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"responseStatus\": \"needsAction\",\n      \"optional\": \"<boolean>\"\n    }\n  ],\n  \"recurrence\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/calendars/:calendarId/events/:eventId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "calendars",
+                            ":calendarId",
+                            "events",
+                            ":eventId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "3f65dc29-1b67-4a26-94de-f0d23f9c8cd7",
+                              "key": "calendarId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            },
+                            {
+                              "id": "a2fd5ec4-b2df-4449-b070-9ed83cf49938",
+                              "key": "eventId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Updates an event with patch semantics."
+                      },
+                      "response": [
+                        {
+                          "id": "b876974d-4dfb-49fb-9007-45f76b06c5d4",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"id\": \"<string>\",\n  \"status\": \"<string>\",\n  \"htmlLink\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"updated\": \"<dateTime>\",\n  \"summary\": \"<string>\",\n  \"description\": \"<string>\",\n  \"location\": \"<string>\",\n  \"start\": {\n    \"date\": \"<date>\",\n    \"dateTime\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  \"end\": {\n    \"date\": \"<date>\",\n    \"dateTime\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  \"attendees\": [\n    {\n      \"email\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"responseStatus\": \"needsAction\",\n      \"optional\": \"<boolean>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"responseStatus\": \"needsAction\",\n      \"optional\": \"<boolean>\"\n    }\n  ],\n  \"recurrence\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/calendars/:calendarId/events/:eventId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "calendars",
+                                ":calendarId",
+                                "events",
+                                ":eventId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "calendarId"
+                                },
+                                {
+                                  "key": "eventId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"id\": \"<string>\",\n  \"status\": \"<string>\",\n  \"htmlLink\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"updated\": \"<dateTime>\",\n  \"summary\": \"<string>\",\n  \"description\": \"<string>\",\n  \"location\": \"<string>\",\n  \"start\": {\n    \"date\": \"<date>\",\n    \"dateTime\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  \"end\": {\n    \"date\": \"<date>\",\n    \"dateTime\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  \"attendees\": [\n    {\n      \"email\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"responseStatus\": \"needsAction\",\n      \"optional\": \"<boolean>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"responseStatus\": \"needsAction\",\n      \"optional\": \"<boolean>\"\n    }\n  ],\n  \"recurrence\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                          "createdAt": "2026-07-28T01:45:13.000Z",
+                          "updatedAt": "2026-07-28T01:45:13.000Z",
+                          "uid": "35240-b876974d-4dfb-49fb-9007-45f76b06c5d4"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:45:13.000Z",
+                      "updatedAt": "2026-07-28T01:45:13.000Z",
+                      "uid": "35240-4134fa9e-341e-4212-84ad-05886f3843fc"
+                    },
+                    {
+                      "name": "Google Calendar Delete event",
+                      "id": "efc2bb31-68e6-4430-945e-d3354520643d",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/calendars/:calendarId/events/:eventId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "calendars",
+                            ":calendarId",
+                            "events",
+                            ":eventId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "20857264-e8f5-4027-b1ed-fbc5cb9bbaaf",
+                              "key": "calendarId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            },
+                            {
+                              "id": "ceb463ea-0d79-45e1-8ca6-8993389b9664",
+                              "key": "eventId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Deletes an event."
+                      },
+                      "response": [
+                        {
+                          "id": "02289c76-3ea6-4166-ab4f-bdb0ec284f37",
+                          "name": "Successful deletion",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/calendars/:calendarId/events/:eventId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "calendars",
+                                ":calendarId",
+                                "events",
+                                ":eventId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "calendarId"
+                                },
+                                {
+                                  "key": "eventId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T01:45:13.000Z",
+                          "updatedAt": "2026-07-28T01:45:13.000Z",
+                          "uid": "35240-02289c76-3ea6-4166-ab4f-bdb0ec284f37"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:45:13.000Z",
+                      "updatedAt": "2026-07-28T01:45:13.000Z",
+                      "uid": "35240-efc2bb31-68e6-4430-945e-d3354520643d"
+                    }
+                  ],
+                  "id": "fb7ae517-604d-4b73-9091-31029d6d8ad7",
+                  "createdAt": "2026-07-28T01:45:13.000Z",
+                  "updatedAt": "2026-07-28T01:45:13.000Z",
+                  "uid": "35240-fb7ae517-604d-4b73-9091-31029d6d8ad7"
+                },
+                {
+                  "name": "quickAdd",
+                  "item": [
+                    {
+                      "name": "Google Calendar Quick add event",
+                      "id": "3b550fc2-83f3-4105-90de-657d849c899d",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/calendars/:calendarId/events/quickAdd?text=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "calendars",
+                            ":calendarId",
+                            "events",
+                            "quickAdd"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "text",
+                              "value": "<string>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "id": "2967d86e-ac6f-411b-b5f1-91edc05e17da",
+                              "key": "calendarId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Creates an event based on a simple text string."
+                      },
+                      "response": [
+                        {
+                          "id": "b6551356-92b9-4c37-84c2-815574f7dd0f",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/calendars/:calendarId/events/quickAdd?text=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "calendars",
+                                ":calendarId",
+                                "events",
+                                "quickAdd"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) ",
+                                  "key": "text",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "calendarId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"id\": \"<string>\",\n  \"status\": \"<string>\",\n  \"htmlLink\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"updated\": \"<dateTime>\",\n  \"summary\": \"<string>\",\n  \"description\": \"<string>\",\n  \"location\": \"<string>\",\n  \"start\": {\n    \"date\": \"<date>\",\n    \"dateTime\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  \"end\": {\n    \"date\": \"<date>\",\n    \"dateTime\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  \"attendees\": [\n    {\n      \"email\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"responseStatus\": \"needsAction\",\n      \"optional\": \"<boolean>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"responseStatus\": \"needsAction\",\n      \"optional\": \"<boolean>\"\n    }\n  ],\n  \"recurrence\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                          "createdAt": "2026-07-28T01:45:13.000Z",
+                          "updatedAt": "2026-07-28T01:45:13.000Z",
+                          "uid": "35240-b6551356-92b9-4c37-84c2-815574f7dd0f"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:45:13.000Z",
+                      "updatedAt": "2026-07-28T01:45:13.000Z",
+                      "uid": "35240-3b550fc2-83f3-4105-90de-657d849c899d"
+                    }
+                  ],
+                  "id": "f85f8e09-9fe8-4d34-a3a3-7bd84972a96e",
+                  "createdAt": "2026-07-28T01:45:13.000Z",
+                  "updatedAt": "2026-07-28T01:45:13.000Z",
+                  "uid": "35240-f85f8e09-9fe8-4d34-a3a3-7bd84972a96e"
+                },
+                {
+                  "name": "Google Calendar List events",
+                  "id": "eab27a40-4e29-47b2-87aa-db74a3faf12f",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/calendars/:calendarId/events?maxResults=<integer>&pageToken=<string>&timeMin=<dateTime>&timeMax=<dateTime>&q=<string>&singleEvents=<boolean>&orderBy=updated",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "calendars",
+                        ":calendarId",
+                        "events"
+                      ],
+                      "query": [
+                        {
+                          "key": "maxResults",
+                          "value": "<integer>"
+                        },
+                        {
+                          "key": "pageToken",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "timeMin",
+                          "value": "<dateTime>"
+                        },
+                        {
+                          "key": "timeMax",
+                          "value": "<dateTime>"
+                        },
+                        {
+                          "key": "q",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "singleEvents",
+                          "value": "<boolean>"
+                        },
+                        {
+                          "key": "orderBy",
+                          "value": "updated"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "9db71cbd-8be5-462e-bba3-026b1a71c43e",
+                          "key": "calendarId",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Returns events on the specified calendar."
+                  },
+                  "response": [
+                    {
+                      "id": "6489c11f-804b-4ba1-824f-6b208d6c21c3",
+                      "name": "Successful response",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/calendars/:calendarId/events?maxResults=<integer>&pageToken=<string>&timeMin=<dateTime>&timeMax=<dateTime>&q=<string>&singleEvents=<boolean>&orderBy=updated",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "calendars",
+                            ":calendarId",
+                            "events"
+                          ],
+                          "query": [
+                            {
+                              "key": "maxResults",
+                              "value": "<integer>"
+                            },
+                            {
+                              "key": "pageToken",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "timeMin",
+                              "value": "<dateTime>"
+                            },
+                            {
+                              "key": "timeMax",
+                              "value": "<dateTime>"
+                            },
+                            {
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "singleEvents",
+                              "value": "<boolean>"
+                            },
+                            {
+                              "key": "orderBy",
+                              "value": "updated"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "calendarId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"nextPageToken\": \"<string>\",\n  \"items\": [\n    {\n      \"kind\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"id\": \"<string>\",\n      \"status\": \"<string>\",\n      \"htmlLink\": \"<string>\",\n      \"created\": \"<dateTime>\",\n      \"updated\": \"<dateTime>\",\n      \"summary\": \"<string>\",\n      \"description\": \"<string>\",\n      \"location\": \"<string>\",\n      \"start\": {\n        \"date\": \"<date>\",\n        \"dateTime\": \"<dateTime>\",\n        \"timeZone\": \"<string>\"\n      },\n      \"end\": {\n        \"date\": \"<date>\",\n        \"dateTime\": \"<dateTime>\",\n        \"timeZone\": \"<string>\"\n      },\n      \"attendees\": [\n        {\n          \"email\": \"<string>\",\n          \"displayName\": \"<string>\",\n          \"responseStatus\": \"declined\",\n          \"optional\": \"<boolean>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"displayName\": \"<string>\",\n          \"responseStatus\": \"accepted\",\n          \"optional\": \"<boolean>\"\n        }\n      ],\n      \"recurrence\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"kind\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"id\": \"<string>\",\n      \"status\": \"<string>\",\n      \"htmlLink\": \"<string>\",\n      \"created\": \"<dateTime>\",\n      \"updated\": \"<dateTime>\",\n      \"summary\": \"<string>\",\n      \"description\": \"<string>\",\n      \"location\": \"<string>\",\n      \"start\": {\n        \"date\": \"<date>\",\n        \"dateTime\": \"<dateTime>\",\n        \"timeZone\": \"<string>\"\n      },\n      \"end\": {\n        \"date\": \"<date>\",\n        \"dateTime\": \"<dateTime>\",\n        \"timeZone\": \"<string>\"\n      },\n      \"attendees\": [\n        {\n          \"email\": \"<string>\",\n          \"displayName\": \"<string>\",\n          \"responseStatus\": \"tentative\",\n          \"optional\": \"<boolean>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"displayName\": \"<string>\",\n          \"responseStatus\": \"tentative\",\n          \"optional\": \"<boolean>\"\n        }\n      ],\n      \"recurrence\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T01:45:13.000Z",
+                      "updatedAt": "2026-07-28T01:45:13.000Z",
+                      "uid": "35240-6489c11f-804b-4ba1-824f-6b208d6c21c3"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:45:13.000Z",
+                  "updatedAt": "2026-07-28T01:45:13.000Z",
+                  "uid": "35240-eab27a40-4e29-47b2-87aa-db74a3faf12f"
+                },
+                {
+                  "name": "Google Calendar Create event",
+                  "id": "ad040f47-e3c4-4a55-a677-c1366172ad32",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"id\": \"<string>\",\n  \"status\": \"<string>\",\n  \"htmlLink\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"updated\": \"<dateTime>\",\n  \"summary\": \"<string>\",\n  \"description\": \"<string>\",\n  \"location\": \"<string>\",\n  \"start\": {\n    \"date\": \"<date>\",\n    \"dateTime\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  \"end\": {\n    \"date\": \"<date>\",\n    \"dateTime\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  \"attendees\": [\n    {\n      \"email\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"responseStatus\": \"needsAction\",\n      \"optional\": \"<boolean>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"responseStatus\": \"needsAction\",\n      \"optional\": \"<boolean>\"\n    }\n  ],\n  \"recurrence\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/calendars/:calendarId/events",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "calendars",
+                        ":calendarId",
+                        "events"
+                      ],
+                      "variable": [
+                        {
+                          "id": "40f38dd8-f521-4dac-a689-9155cd8f9cc4",
+                          "key": "calendarId",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Creates an event."
+                  },
+                  "response": [
+                    {
+                      "id": "d6d0da63-8bc4-4ef6-adb6-ef2f7efe8ea2",
+                      "name": "Successful response",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"id\": \"<string>\",\n  \"status\": \"<string>\",\n  \"htmlLink\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"updated\": \"<dateTime>\",\n  \"summary\": \"<string>\",\n  \"description\": \"<string>\",\n  \"location\": \"<string>\",\n  \"start\": {\n    \"date\": \"<date>\",\n    \"dateTime\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  \"end\": {\n    \"date\": \"<date>\",\n    \"dateTime\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  \"attendees\": [\n    {\n      \"email\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"responseStatus\": \"needsAction\",\n      \"optional\": \"<boolean>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"responseStatus\": \"needsAction\",\n      \"optional\": \"<boolean>\"\n    }\n  ],\n  \"recurrence\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/calendars/:calendarId/events",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "calendars",
+                            ":calendarId",
+                            "events"
+                          ],
+                          "variable": [
+                            {
+                              "key": "calendarId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"id\": \"<string>\",\n  \"status\": \"<string>\",\n  \"htmlLink\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"updated\": \"<dateTime>\",\n  \"summary\": \"<string>\",\n  \"description\": \"<string>\",\n  \"location\": \"<string>\",\n  \"start\": {\n    \"date\": \"<date>\",\n    \"dateTime\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  \"end\": {\n    \"date\": \"<date>\",\n    \"dateTime\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  \"attendees\": [\n    {\n      \"email\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"responseStatus\": \"needsAction\",\n      \"optional\": \"<boolean>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"responseStatus\": \"needsAction\",\n      \"optional\": \"<boolean>\"\n    }\n  ],\n  \"recurrence\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "createdAt": "2026-07-28T01:45:13.000Z",
+                      "updatedAt": "2026-07-28T01:45:13.000Z",
+                      "uid": "35240-d6d0da63-8bc4-4ef6-adb6-ef2f7efe8ea2"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:45:13.000Z",
+                  "updatedAt": "2026-07-28T01:45:13.000Z",
+                  "uid": "35240-ad040f47-e3c4-4a55-a677-c1366172ad32"
+                }
+              ],
+              "id": "3e3f4135-286e-492a-a814-be974012d209",
+              "createdAt": "2026-07-28T01:45:13.000Z",
+              "updatedAt": "2026-07-28T01:45:13.000Z",
+              "uid": "35240-3e3f4135-286e-492a-a814-be974012d209"
+            },
+            {
+              "name": "acl",
+              "item": [
+                {
+                  "name": "Google Calendar List ACL rules",
+                  "id": "1e3e77e0-6f81-40b2-9e85-8d005b237579",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/calendars/:calendarId/acl",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "calendars",
+                        ":calendarId",
+                        "acl"
+                      ],
+                      "variable": [
+                        {
+                          "id": "05776148-b1b9-4dcc-b2e6-357e7661b36a",
+                          "key": "calendarId",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Returns the rules in the access control list for the calendar."
+                  },
+                  "response": [
+                    {
+                      "id": "dd215308-2f6a-4100-91ae-161325201a89",
+                      "name": "Successful response",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/calendars/:calendarId/acl",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "calendars",
+                            ":calendarId",
+                            "acl"
+                          ],
+                          "variable": [
+                            {
+                              "key": "calendarId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"items\": [\n    {\n      \"kind\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"id\": \"<string>\",\n      \"role\": \"writer\",\n      \"scope\": {\n        \"type\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    },\n    {\n      \"kind\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"id\": \"<string>\",\n      \"role\": \"none\",\n      \"scope\": {\n        \"type\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T01:45:13.000Z",
+                      "updatedAt": "2026-07-28T01:45:13.000Z",
+                      "uid": "35240-dd215308-2f6a-4100-91ae-161325201a89"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:45:13.000Z",
+                  "updatedAt": "2026-07-28T01:45:13.000Z",
+                  "uid": "35240-1e3e77e0-6f81-40b2-9e85-8d005b237579"
+                },
+                {
+                  "name": "Google Calendar Insert ACL rule",
+                  "id": "622415b9-fc04-46ee-b7e0-ccee754fe093",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"id\": \"<string>\",\n  \"role\": \"owner\",\n  \"scope\": {\n    \"type\": \"<string>\",\n    \"value\": \"<string>\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/calendars/:calendarId/acl",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "calendars",
+                        ":calendarId",
+                        "acl"
+                      ],
+                      "variable": [
+                        {
+                          "id": "0539c100-ba37-42c8-9795-74c4be7bc0e4",
+                          "key": "calendarId",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Creates an access control rule."
+                  },
+                  "response": [
+                    {
+                      "id": "2068d905-4c0d-4943-954b-a8e0e01950fb",
+                      "name": "Successful response",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"id\": \"<string>\",\n  \"role\": \"owner\",\n  \"scope\": {\n    \"type\": \"<string>\",\n    \"value\": \"<string>\"\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/calendars/:calendarId/acl",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "calendars",
+                            ":calendarId",
+                            "acl"
+                          ],
+                          "variable": [
+                            {
+                              "key": "calendarId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"id\": \"<string>\",\n  \"role\": \"owner\",\n  \"scope\": {\n    \"type\": \"<string>\",\n    \"value\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-07-28T01:45:13.000Z",
+                      "updatedAt": "2026-07-28T01:45:13.000Z",
+                      "uid": "35240-2068d905-4c0d-4943-954b-a8e0e01950fb"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:45:13.000Z",
+                  "updatedAt": "2026-07-28T01:45:13.000Z",
+                  "uid": "35240-622415b9-fc04-46ee-b7e0-ccee754fe093"
+                }
+              ],
+              "id": "00b7b7d8-4364-4c5e-bcd6-976bbd790ca0",
+              "createdAt": "2026-07-28T01:45:13.000Z",
+              "updatedAt": "2026-07-28T01:45:13.000Z",
+              "uid": "35240-00b7b7d8-4364-4c5e-bcd6-976bbd790ca0"
+            },
+            {
+              "name": "Google Calendar Get calendar",
+              "id": "e53beee6-2c0a-4b5d-aea6-264ce814c19d",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/calendars/:calendarId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "calendars",
+                    ":calendarId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "0e1e8ae8-9a2b-44e6-9075-80a89eb670ba",
+                      "key": "calendarId",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "description": "Returns metadata for a calendar."
+              },
+              "response": [
+                {
+                  "id": "f1d9189c-c90d-44e4-a818-827192efdc6b",
+                  "name": "Successful response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/calendars/:calendarId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "calendars",
+                        ":calendarId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "calendarId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"id\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"description\": \"<string>\",\n  \"location\": \"<string>\",\n  \"timeZone\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:45:13.000Z",
+                  "updatedAt": "2026-07-28T01:45:13.000Z",
+                  "uid": "35240-f1d9189c-c90d-44e4-a818-827192efdc6b"
+                }
+              ],
+              "createdAt": "2026-07-28T01:45:13.000Z",
+              "updatedAt": "2026-07-28T01:45:13.000Z",
+              "uid": "35240-e53beee6-2c0a-4b5d-aea6-264ce814c19d"
+            },
+            {
+              "name": "Google Calendar Update calendar",
+              "id": "7ccb9b06-25d0-4a44-aa82-6015ffadf680",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"id\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"description\": \"<string>\",\n  \"location\": \"<string>\",\n  \"timeZone\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/calendars/:calendarId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "calendars",
+                    ":calendarId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "f1f82cf1-39f5-424b-a4cc-c722eadc60a4",
+                      "key": "calendarId",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "description": "Updates metadata for a calendar."
+              },
+              "response": [
+                {
+                  "id": "1ddb674b-937f-420d-9d4c-cc82b1a6177e",
+                  "name": "Successful response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"id\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"description\": \"<string>\",\n  \"location\": \"<string>\",\n  \"timeZone\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/calendars/:calendarId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "calendars",
+                        ":calendarId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "calendarId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"id\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"description\": \"<string>\",\n  \"location\": \"<string>\",\n  \"timeZone\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:45:13.000Z",
+                  "updatedAt": "2026-07-28T01:45:13.000Z",
+                  "uid": "35240-1ddb674b-937f-420d-9d4c-cc82b1a6177e"
+                }
+              ],
+              "createdAt": "2026-07-28T01:45:13.000Z",
+              "updatedAt": "2026-07-28T01:45:13.000Z",
+              "uid": "35240-7ccb9b06-25d0-4a44-aa82-6015ffadf680"
+            },
+            {
+              "name": "Google Calendar Delete calendar",
+              "id": "3c117067-063c-424b-8f41-0f9e00b142eb",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/calendars/:calendarId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "calendars",
+                    ":calendarId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "7211b9eb-331b-42cb-89c0-d93f6398b99a",
+                      "key": "calendarId",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "description": "Deletes a secondary calendar."
+              },
+              "response": [
+                {
+                  "id": "517c4b5e-ed96-4c48-a761-beb93b9d7d3a",
+                  "name": "Successful deletion",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/calendars/:calendarId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "calendars",
+                        ":calendarId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "calendarId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "No Content",
+                  "code": 204,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:45:13.000Z",
+                  "updatedAt": "2026-07-28T01:45:13.000Z",
+                  "uid": "35240-517c4b5e-ed96-4c48-a761-beb93b9d7d3a"
+                }
+              ],
+              "createdAt": "2026-07-28T01:45:13.000Z",
+              "updatedAt": "2026-07-28T01:45:13.000Z",
+              "uid": "35240-3c117067-063c-424b-8f41-0f9e00b142eb"
+            }
+          ],
+          "id": "7ac71fe7-e34f-46cc-85fe-a0927dd7e7ab",
+          "createdAt": "2026-07-28T01:45:13.000Z",
+          "updatedAt": "2026-07-28T01:45:13.000Z",
+          "uid": "35240-7ac71fe7-e34f-46cc-85fe-a0927dd7e7ab"
+        },
+        {
+          "name": "Google Calendar Create calendar",
+          "id": "d23675ab-05fd-47cc-963f-3fa7920c87af",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"id\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"description\": \"<string>\",\n  \"location\": \"<string>\",\n  \"timeZone\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/calendars",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "calendars"
+              ]
+            },
+            "description": "Creates a secondary calendar."
+          },
+          "response": [
+            {
+              "id": "53856956-4812-4b16-ad5f-2a49baba6f96",
+              "name": "Successful response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"id\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"description\": \"<string>\",\n  \"location\": \"<string>\",\n  \"timeZone\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/calendars",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "calendars"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"kind\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"id\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"description\": \"<string>\",\n  \"location\": \"<string>\",\n  \"timeZone\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T01:45:13.000Z",
+              "updatedAt": "2026-07-28T01:45:13.000Z",
+              "uid": "35240-53856956-4812-4b16-ad5f-2a49baba6f96"
+            }
+          ],
+          "createdAt": "2026-07-28T01:45:13.000Z",
+          "updatedAt": "2026-07-28T01:45:13.000Z",
+          "uid": "35240-d23675ab-05fd-47cc-963f-3fa7920c87af"
+        }
+      ],
+      "id": "010aa922-dd32-4f65-86ee-b81761d210b8",
+      "createdAt": "2026-07-28T01:45:13.000Z",
+      "updatedAt": "2026-07-28T01:45:13.000Z",
+      "uid": "35240-010aa922-dd32-4f65-86ee-b81761d210b8"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://www.googleapis.com/calendar/v3"
+    }
+  ]
+}
