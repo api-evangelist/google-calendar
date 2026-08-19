@@ -1,0 +1,123 @@
+{
+  "item": [
+    {
+      "id": "1b1d3bc9-97e3-4700-9006-f3c500228854",
+      "name": "freeBusy",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c9170b16-904c-4eb3-8f0f-67ec6ef6fe03",
+          "name": "Google Calendar Query free/busy",
+          "request": {
+            "name": "Google Calendar Query free/busy",
+            "description": {
+              "content": "Returns free/busy information for a set of calendars.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "freeBusy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"timeMin\": \"<dateTime>\",\n  \"timeMax\": \"<dateTime>\",\n  \"timeZone\": \"<string>\",\n  \"items\": [\n    {\n      \"id\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f91f99c0-6029-4b96-a277-4567afebc3ec",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "freeBusy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"timeMin\": \"<dateTime>\",\n  \"timeMax\": \"<dateTime>\",\n  \"timeZone\": \"<string>\",\n  \"items\": [\n    {\n      \"id\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"kind\": \"string\",\n  \"timeMin\": \"2002-05-05T16:11:58.532Z\",\n  \"timeMax\": \"1995-06-16T14:06:14.596Z\",\n  \"calendars\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.googleapis.com/calendar/v3",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "31fe7690-0e26-4e73-8519-13e2f117f50a",
+    "name": "Google Calendar Calendars freeBusy API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Google Calendar API provides RESTful access to Google Calendar data. It enables managing calendars, events, access control lists, settings, and free/busy information.\n\nContact Support:\n Name: Google",
+      "type": "text/plain"
+    }
+  }
+}

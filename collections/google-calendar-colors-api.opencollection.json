@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Calendar Calendars Colors API",
+    "version": "v3"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Colors",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Calendar Get colors",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.googleapis.com/calendar/v3/colors"
+          },
+          "docs": "Returns the color definitions for calendars and events."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

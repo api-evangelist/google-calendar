@@ -1,0 +1,329 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Calendar Calendars API",
+    "version": "v3"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Calendars",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Calendar Create calendar",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.googleapis.com/calendar/v3/calendars",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a secondary calendar."
+        },
+        {
+          "info": {
+            "name": "Google Calendar Get calendar",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.googleapis.com/calendar/v3/calendars/:calendarId",
+            "params": [
+              {
+                "name": "calendarId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns metadata for a calendar."
+        },
+        {
+          "info": {
+            "name": "Google Calendar Update calendar",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://www.googleapis.com/calendar/v3/calendars/:calendarId",
+            "params": [
+              {
+                "name": "calendarId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates metadata for a calendar."
+        },
+        {
+          "info": {
+            "name": "Google Calendar Delete calendar",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://www.googleapis.com/calendar/v3/calendars/:calendarId",
+            "params": [
+              {
+                "name": "calendarId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes a secondary calendar."
+        },
+        {
+          "info": {
+            "name": "Google Calendar List events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.googleapis.com/calendar/v3/calendars/:calendarId/events",
+            "params": [
+              {
+                "name": "calendarId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "timeMin",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "timeMax",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "singleEvents",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "orderBy",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns events on the specified calendar."
+        },
+        {
+          "info": {
+            "name": "Google Calendar Create event",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.googleapis.com/calendar/v3/calendars/:calendarId/events",
+            "params": [
+              {
+                "name": "calendarId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates an event."
+        },
+        {
+          "info": {
+            "name": "Google Calendar Get event",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.googleapis.com/calendar/v3/calendars/:calendarId/events/:eventId",
+            "params": [
+              {
+                "name": "calendarId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eventId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns an event."
+        },
+        {
+          "info": {
+            "name": "Google Calendar Update event",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://www.googleapis.com/calendar/v3/calendars/:calendarId/events/:eventId",
+            "params": [
+              {
+                "name": "calendarId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eventId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an event."
+        },
+        {
+          "info": {
+            "name": "Google Calendar Patch event",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://www.googleapis.com/calendar/v3/calendars/:calendarId/events/:eventId",
+            "params": [
+              {
+                "name": "calendarId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eventId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an event with patch semantics."
+        },
+        {
+          "info": {
+            "name": "Google Calendar Delete event",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://www.googleapis.com/calendar/v3/calendars/:calendarId/events/:eventId",
+            "params": [
+              {
+                "name": "calendarId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eventId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes an event."
+        },
+        {
+          "info": {
+            "name": "Google Calendar Quick add event",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.googleapis.com/calendar/v3/calendars/:calendarId/events/quickAdd",
+            "params": [
+              {
+                "name": "calendarId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "text",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Creates an event based on a simple text string."
+        },
+        {
+          "info": {
+            "name": "Google Calendar List ACL rules",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.googleapis.com/calendar/v3/calendars/:calendarId/acl",
+            "params": [
+              {
+                "name": "calendarId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns the rules in the access control list for the calendar."
+        },
+        {
+          "info": {
+            "name": "Google Calendar Insert ACL rule",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.googleapis.com/calendar/v3/calendars/:calendarId/acl",
+            "params": [
+              {
+                "name": "calendarId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates an access control rule."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

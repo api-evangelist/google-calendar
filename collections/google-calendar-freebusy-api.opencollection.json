@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Calendar Calendars freeBusy API",
+    "version": "v3"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "freeBusy",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Calendar Query free/busy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.googleapis.com/calendar/v3/freeBusy",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns free/busy information for a set of calendars."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,90 @@
+{
+  "item": [
+    {
+      "id": "78b73381-7bee-4d12-8182-2ace18e6a2bd",
+      "name": "Colors",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4795f7a3-34de-496e-b7c6-c07afa798a04",
+          "name": "Google Calendar Get colors",
+          "request": {
+            "name": "Google Calendar Get colors",
+            "description": {
+              "content": "Returns the color definitions for calendars and events.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "colors"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b038cd6e-0296-41de-ad1c-6d0eb60d2db9",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "colors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.googleapis.com/calendar/v3",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "bb4696e4-de3a-4266-8f30-e3e5ce61dce0",
+    "name": "Google Calendar Calendars Colors API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Google Calendar API provides RESTful access to Google Calendar data. It enables managing calendars, events, access control lists, settings, and free/busy information.\n\nContact Support:\n Name: Google",
+      "type": "text/plain"
+    }
+  }
+}

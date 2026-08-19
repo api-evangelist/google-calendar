@@ -1,0 +1,55 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Calendar Calendars Users API",
+    "version": "v3"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Calendar List calendar list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.googleapis.com/calendar/v3/users/me/calendarList"
+          },
+          "docs": "Returns the calendars on the user's calendar list."
+        },
+        {
+          "info": {
+            "name": "Google Calendar Insert calendar to list",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.googleapis.com/calendar/v3/users/me/calendarList",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Inserts an existing calendar into the user's calendar list."
+        },
+        {
+          "info": {
+            "name": "Google Calendar List settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.googleapis.com/calendar/v3/users/me/settings"
+          },
+          "docs": "Returns all user settings for the authenticated user."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
