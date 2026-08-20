@@ -26,6 +26,13 @@ type: Index
 tags:
   - Availability
   - Calendar
+  - Event
+  - Google
+  - Google Workspace
+  - Scheduling
+tags_raw:
+  - Availability
+  - Calendar
   - Events
   - Google
   - Google Workspace
@@ -77,6 +84,8 @@ apis:
   humanURL: https://developers.google.com/workspace/calendar/api/guides/overview
   baseURL: https://www.googleapis.com/calendar/v3
   tags:
+  - Free Busy
+  tags_raw:
   - freeBusy
   properties:
   - type: OpenAPI
@@ -97,6 +106,8 @@ apis:
   humanURL: https://developers.google.com/workspace/calendar/api/guides/overview
   baseURL: https://www.googleapis.com/calendar/v3
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
