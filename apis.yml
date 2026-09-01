@@ -95,7 +95,8 @@ apis:
   description: The freeBusy API from Google Calendar — 1 operation(s) for freebusy.
   humanURL: https://developers.google.com/workspace/calendar/api/guides/overview
   baseURL: https://www.googleapis.com/calendar/v3
-  tags: []
+  tags:
+  - Free Busy
   tags_raw:
   - freeBusy
   properties:
