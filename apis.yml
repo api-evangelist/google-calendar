@@ -90,28 +90,6 @@ apis:
     url: json-schema/json-schema.yml
   - type: JSONLD
     url: json-ld/json-ld.jsonld
-- aid: google-calendar:google-calendar-freebusy-api
-  name: Google Calendar freeBusy API
-  description: The freeBusy API from Google Calendar — 1 operation(s) for freebusy.
-  humanURL: https://developers.google.com/workspace/calendar/api/guides/overview
-  baseURL: https://www.googleapis.com/calendar/v3
-  tags:
-  - Free Busy
-  tags_raw:
-  - freeBusy
-  properties:
-  - type: OpenAPI
-    url: openapi/google-calendar-freebusy-api-openapi.yml
-  - type: Documentation
-    url: https://developers.google.com/workspace/calendar/api/guides/overview
-  - type: Authentication
-    url: https://developers.google.com/workspace/calendar/api/auth
-  - type: GettingStarted
-    url: https://developers.google.com/workspace/calendar/api/quickstart/python
-  - type: JSONSchema
-    url: json-schema/json-schema.yml
-  - type: JSONLD
-    url: json-ld/json-ld.jsonld
 - aid: google-calendar:google-calendar-users-api
   name: Google Calendar Users API
   description: The Users API from Google Calendar — 2 operation(s) for users.
@@ -124,6 +102,26 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/google-calendar-users-api-openapi.yml
+  - type: Documentation
+    url: https://developers.google.com/workspace/calendar/api/guides/overview
+  - type: Authentication
+    url: https://developers.google.com/workspace/calendar/api/auth
+  - type: GettingStarted
+    url: https://developers.google.com/workspace/calendar/api/quickstart/python
+  - type: JSONSchema
+    url: json-schema/json-schema.yml
+  - type: JSONLD
+    url: json-ld/json-ld.jsonld
+- aid: google-calendar:google-calendar-free-busy-api
+  name: Google Calendar Free Busy API
+  description: The Free Busy API from Google Calendar — 1 operation(s) for free busy.
+  humanURL: https://developers.google.com/workspace/calendar/api/guides/overview
+  baseURL: https://www.googleapis.com/calendar/v3
+  tags:
+  - Free Busy
+  properties:
+  - type: OpenAPI
+    url: openapi/google-calendar-free-busy-api-openapi.yml
   - type: Documentation
     url: https://developers.google.com/workspace/calendar/api/guides/overview
   - type: Authentication
