@@ -340,39 +340,6 @@ paths:
       - Calendars
 components:
   schemas:
-    Calendar:
-      type: object
-      properties:
-        kind:
-          type: string
-        etag:
-          type: string
-        id:
-          type: string
-        summary:
-          type: string
-        description:
-          type: string
-        location:
-          type: string
-        timeZone:
-          type: string
-    EventAttendee:
-      type: object
-      properties:
-        email:
-          type: string
-        displayName:
-          type: string
-        responseStatus:
-          type: string
-          enum:
-          - needsAction
-          - declined
-          - tentative
-          - accepted
-        optional:
-          type: boolean
     AclRule:
       type: object
       properties:
@@ -397,6 +364,32 @@ components:
               type: string
             value:
               type: string
+    Events:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        summary:
+          type: string
+        nextPageToken:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Event'
+    EventDateTime:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date
+        dateTime:
+          type: string
+          format: date-time
+        timeZone:
+          type: string
     Acl:
       type: object
       properties:
@@ -408,15 +401,21 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/AclRule'
-    EventDateTime:
+    Calendar:
       type: object
       properties:
-        date:
+        kind:
           type: string
-          format: date
-        dateTime:
+        etag:
           type: string
-          format: date-time
+        id:
+          type: string
+        summary:
+          type: string
+        description:
+          type: string
+        location:
+          type: string
         timeZone:
           type: string
     Event:
@@ -456,18 +455,19 @@ components:
           type: array
           items:
             type: string
-    Events:
+    EventAttendee:
       type: object
       properties:
-        kind:
+        email:
           type: string
-        etag:
+        displayName:
           type: string
-        summary:
+        responseStatus:
           type: string
-        nextPageToken:
-          type: string
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/Event'
+          enum:
+          - needsAction
+          - declined
+          - tentative
+          - accepted
+        optional:
+          type: boolean

@@ -1,26 +1,29 @@
 {
   "provider": "google-calendar",
   "sources": [
-    "google-calendar-calendars-api-openapi.yml",
-    "google-calendar-colors-api-openapi.yml",
-    "google-calendar-freebusy-api-openapi.yml",
-    "google-calendar-users-api-openapi.yml"
+    "_original/openapi.yml"
   ],
   "outputs": [
     "google-calendar-calendars-api-openapi.yml",
     "google-calendar-colors-api-openapi.yml",
-    "google-calendar-freebusy-api-openapi.yml",
-    "google-calendar-users-api-openapi.yml"
+    "google-calendar-users-api-openapi.yml",
+    "google-calendar-freebusy-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
   "notes": [
-    "google-calendar-calendars-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-calendar-colors-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-calendar-freebusy-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-calendar-users-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "apis.yml register: already-registered"
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "superseded outputs removed: google-calendar-free-busy-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 4 total)"
   ],
-  "skipped": []
+  "skipped": [
+    "google-calendar-calendars-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-calendar-colors-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-calendar-free-busy-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-calendar-users-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
