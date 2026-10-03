@@ -55,6 +55,19 @@ paths:
       - Users
 components:
   schemas:
+    CalendarList:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        nextPageToken:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/CalendarListEntry'
     CalendarListEntry:
       type: object
       properties:
@@ -78,16 +91,3 @@ components:
           type: boolean
         primary:
           type: boolean
-    CalendarList:
-      type: object
-      properties:
-        kind:
-          type: string
-        etag:
-          type: string
-        nextPageToken:
-          type: string
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/CalendarListEntry'
