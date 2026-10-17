@@ -32,6 +32,19 @@ paths:
       - Free Busy
 components:
   schemas:
+    FreeBusyResponse:
+      type: object
+      properties:
+        kind:
+          type: string
+        timeMin:
+          type: string
+          format: date-time
+        timeMax:
+          type: string
+          format: date-time
+        calendars:
+          type: object
     FreeBusyRequest:
       type: object
       properties:
@@ -50,16 +63,3 @@ components:
             properties:
               id:
                 type: string
-    FreeBusyResponse:
-      type: object
-      properties:
-        kind:
-          type: string
-        timeMin:
-          type: string
-          format: date-time
-        timeMax:
-          type: string
-          format: date-time
-        calendars:
-          type: object

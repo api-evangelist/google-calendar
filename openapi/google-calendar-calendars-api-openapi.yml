@@ -340,38 +340,6 @@ paths:
       - Calendars
 components:
   schemas:
-    Events:
-      type: object
-      properties:
-        kind:
-          type: string
-        etag:
-          type: string
-        summary:
-          type: string
-        nextPageToken:
-          type: string
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/Event'
-    Calendar:
-      type: object
-      properties:
-        kind:
-          type: string
-        etag:
-          type: string
-        id:
-          type: string
-        summary:
-          type: string
-        description:
-          type: string
-        location:
-          type: string
-        timeZone:
-          type: string
     Acl:
       type: object
       properties:
@@ -420,6 +388,38 @@ components:
           type: array
           items:
             type: string
+    Events:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        summary:
+          type: string
+        nextPageToken:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Event'
+    Calendar:
+      type: object
+      properties:
+        kind:
+          type: string
+        etag:
+          type: string
+        id:
+          type: string
+        summary:
+          type: string
+        description:
+          type: string
+        location:
+          type: string
+        timeZone:
+          type: string
     EventDateTime:
       type: object
       properties:
@@ -431,22 +431,6 @@ components:
           format: date-time
         timeZone:
           type: string
-    EventAttendee:
-      type: object
-      properties:
-        email:
-          type: string
-        displayName:
-          type: string
-        responseStatus:
-          type: string
-          enum:
-          - needsAction
-          - declined
-          - tentative
-          - accepted
-        optional:
-          type: boolean
     AclRule:
       type: object
       properties:
@@ -471,3 +455,19 @@ components:
               type: string
             value:
               type: string
+    EventAttendee:
+      type: object
+      properties:
+        email:
+          type: string
+        displayName:
+          type: string
+        responseStatus:
+          type: string
+          enum:
+          - needsAction
+          - declined
+          - tentative
+          - accepted
+        optional:
+          type: boolean
