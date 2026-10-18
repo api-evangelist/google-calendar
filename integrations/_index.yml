@@ -82,7 +82,7 @@
     - alpha
     in_cloud: true
     builder: unknown (community connector; contributor not in the record)
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: google-calendar-fivetran
   label: Fivetran
@@ -108,5 +108,5 @@
     - connectors/applications/google-calendar
     vendor_link: https://www.google.com/calendar/about/
     builder: Fivetran
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
