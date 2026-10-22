@@ -107,6 +107,80 @@ edges:
     builder: Pipedream repo (component)
   detected_by: sweep-workflow-automation.py
   first_seen: '2026-10-15'
+- partner_name: Raycast
+  partner: raycast
+  partner_match: domain
+  partner_url: https://www.raycast.com
+  partner_domain: raycast.com
+  type: marketplace
+  marketplace: raycast-store
+  channel: connector-listing
+  relationship: connector-coverage
+  evidence: https://www.raycast.com/thomas/google-calendar
+  app: Google Calendar
+  category: Raycast Store extension (community wrapper)
+  listing_count: 4
+  contract_reference:
+    register: Raycast Store (raycast/extensions monorepo + store_listings JSON)
+    spec_file: null
+    role: raycast-community-wrapper
+    builder: community
+    authors:
+    - aramikuto
+    - ben_aguirre
+    - jonah_tweed
+    - thomas
+    matched_domain: google.com
+    matched_by: domain+name-among-holders
+    monorepo_commit: 84f9ac51336a8c69f70974a75bc067c0feae3658
+    listings:
+    - title: Google Calendar
+      store_url: https://www.raycast.com/thomas/google-calendar
+      installs: 72970
+      categories:
+      - Productivity
+      - Applications
+      - AI Extensions
+      source: https://github.com/raycast/extensions/tree/84f9ac51336a8c69f70974a75bc067c0feae3658/extensions/google-calendar/
+      author: thomas
+      ai_tools: true
+    - title: Google Calendar Events Quick Add
+      store_url: https://www.raycast.com/ben_aguirre/google-calendar-quickadd
+      installs: 1188
+      categories: []
+      source: https://github.com/raycast/extensions/tree/84f9ac51336a8c69f70974a75bc067c0feae3658/extensions/google-calendar-quickadd/
+      author: ben_aguirre
+    - title: Google Calendar Epic Time Logger
+      store_url: https://www.raycast.com/aramikuto/time-logger
+      installs: 452
+      categories: []
+      source: https://github.com/raycast/extensions/tree/84f9ac51336a8c69f70974a75bc067c0feae3658/extensions/time-logger/
+      author: aramikuto
+    - title: DayCal - Google Calendar
+      store_url: https://www.raycast.com/jonah_tweed/daycal-google-calendar
+      installs: 7
+      categories:
+      - Productivity
+      source: https://github.com/raycast/extensions/tree/84f9ac51336a8c69f70974a75bc067c0feae3658/extensions/daycal-google-calendar/
+      author: jonah_tweed
+    categories:
+    - AI Extensions
+    - Applications
+    - Productivity
+    identity_note: the extension's own source calls a host on the product's domain AND its title / package name
+      passes partner_link's name check; built by Raycast community developers, not the vendor
+    signal_note: 'coverage: Raycast''s store reaches the product through community-built extensions; one edge per
+      (product, store); install / listing counts are context, never counted'
+    detected_by: sweep-raycast-store-extensions.py
+    detected: '2026-10-22'
+  detected_by: sweep-raycast-store-extensions.py
+  first_seen: '2026-10-22'
+  apps:
+  - Google Calendar
+  - Google Calendar Events Quick Add
+  - Google Calendar Epic Time Logger
+  - DayCal - Google Calendar
+  direction: partner-built
 method: searched
 checked:
 - https://connectors.airbyte.com/files/registries/v0/cloud_registry.json
@@ -116,6 +190,8 @@ checked:
 - https://github.com/PipedreamHQ/pipedream/tree/94800dd6de6640b942c65ea7ee655f71ac56d438/components/
 - https://github.com/PipedreamHQ/pipedream/tree/d5872355ef27b4efa769f05352f2820c299a456e/components/
 - https://zapier.com/api/v4/apps/
+- https://github.com/raycast/extensions/tree/84f9ac51336a8c69f70974a75bc067c0feae3658/extensions
+- https://www.raycast.com/api/v1/store_listings
 source:
 - https://github.com/PipedreamHQ/pipedream/tree/94800dd6de6640b942c65ea7ee655f71ac56d438/components/
 - https://zapier.com/api/v4/apps/
