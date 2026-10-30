@@ -1,4 +1,4 @@
-# Google Calendar (google-calendar)
+# Google Calendar
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,69 +66,146 @@
 
 The Google Calendar API provides RESTful access to Google Calendar data, enabling applications to create, view, and manage calendar events, access control lists, and user settings. It supports creating and managing multiple calendars, querying free/busy information, setting up push notifications for changes, and integrating calendar functionality into third-party applications.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/google-calendar/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/google-calendar/refs/heads/main/apis.yml)
+**Areas:** Availability · Calendar · Event · Google · Google Workspace · Scheduling
 
-## Scope
+## Google Calendar on APIs.io
 
-- **Type:** Index
+Everything profiled for Google Calendar is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/google-calendar/](https://apis.io/providers/google-calendar/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (4)
 
-- Availability
-- Calendar
-- Events
-- Google
-- Google Workspace
-- Scheduling
+- [Google Calendar Calendars API](https://apis.io/apis/google-calendar/google-calendar-calendars-api/) — The Calendars API from Google Calendar — 6 operation(s) for calendars.
+- [Google Calendar Colors API](https://apis.io/apis/google-calendar/google-calendar-colors-api/) — The Colors API from Google Calendar — 1 operation(s) for colors.
+- [Google Calendar Users API](https://apis.io/apis/google-calendar/google-calendar-users-api/) — The Users API from Google Calendar — 2 operation(s) for users.
+- [Google Calendar Free Busy API](https://apis.io/apis/google-calendar/google-calendar-free-busy-api/) — The Free Busy API from Google Calendar — 1 operation(s) for free busy.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-13
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Google Calendar API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Google Calendar API lets you manage calendars, events, access control, settings, and free/busy information. It supports creating events, subscribing to calendars, querying availability, and receiving push notifications for changes.
+- [Google Calendar Agentic Access](https://apis.io/agentic-access/google-calendar/google-calendar-agentic-access/)
 
-- **Human URL:** [https://developers.google.com/workspace/calendar/api/guides/overview](https://developers.google.com/workspace/calendar/api/guides/overview)
-- **Base URL:** `https://www.googleapis.com/calendar/v3`
+#### JSON-LD (1)
 
-#### Tags
+Linked-data contexts for the provider's vocabulary.
 
-- Availability
-- Calendar
-- Events
-- Scheduling
+- [Json Ld Context](https://apis.io/jsonld/google-calendar/json-ld/)
 
-#### Properties
+#### Collections (9)
 
-- [Documentation](https://developers.google.com/workspace/calendar/api/guides/overview)
-- [OpenAPI](openapi/openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/openapi.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/openapi.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Authentication](https://developers.google.com/workspace/calendar/api/auth)
-- [Getting Started](https://developers.google.com/workspace/calendar/api/quickstart/python)
-- [JSON Schema](json-schema/json-schema.yml) — [JSON Schema](https://json-schema.org/specification)
-- [JSON-LD](json-ld/json-ld.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
+Postman and Open Collection request collections.
 
-## Common Properties
+- [Google Calendar Calendars API](https://apis.io/collections/google-calendar/open-google-calendar-calendars-api/)
+- [Google Calendar Calendars Colors API](https://apis.io/collections/google-calendar/open-google-calendar-colors-api/)
+- [Google Calendar Calendars freeBusy API](https://apis.io/collections/google-calendar/open-google-calendar-freebusy-api/)
+- [Google Calendar Calendars Users API](https://apis.io/collections/google-calendar/open-google-calendar-users-api/)
+- [Google Calendar API](https://apis.io/collections/google-calendar/open-openapi/)
+- [Google Calendar Calendars API](https://apis.io/collections/google-calendar/postman-google-calendar-calendars-api/)
+- [Google Calendar Calendars Colors API](https://apis.io/collections/google-calendar/postman-google-calendar-colors-api/)
+- [Google Calendar Calendars freeBusy API](https://apis.io/collections/google-calendar/postman-google-calendar-freebusy-api/)
+- [Google Calendar Calendars Users API](https://apis.io/collections/google-calendar/postman-google-calendar-users-api/)
 
-- [GitHub Organization](https://github.com/googleworkspace)
-- [Portal](https://developers.google.com/workspace/calendar)
-- [Getting Started](https://developers.google.com/workspace/calendar/api/guides/overview)
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Google Calendar — jsonschema rules](https://apis.io/rules/google-calendar/google-calendar-jsonschema-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Google Calendar Domain Security](https://apis.io/security/google-calendar/google-calendar-domain-security/)
+- [Google Calendar Vulnerability Disclosure](https://apis.io/security/google-calendar/google-calendar-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Google Calendar Plans Pricing](https://apis.io/plans/google-calendar/google-calendar-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Google Calendar Rate Limits](https://apis.io/rate-limits/google-calendar/google-calendar-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Google Calendar Finops](https://apis.io/finops/google-calendar/google-calendar-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.google.com/)
 - [Documentation](https://developers.google.com/workspace/calendar/api/reference/rest)
-- [Authentication](https://developers.google.com/identity/protocols/oauth2)
+- [Getting started](https://developers.google.com/workspace/calendar/api/guides/overview)
 - [Pricing](https://developers.google.com/workspace/calendar/api/guides/quota)
-- [Terms of Service](https://developers.google.com/terms)
-- [Privacy Policy](https://policies.google.com/privacy)
-- [Status Page](https://www.google.com/appsstatus/dashboard/)
 - [Support](https://developers.google.com/workspace/calendar/api/support)
 - [Blog](https://workspaceupdates.googleblog.com/)
-- [JSON-LD](json-ld/json-ld.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
+- [Terms of service](https://developers.google.com/terms)
+- [Privacy policy](https://policies.google.com/privacy)
+- [GitHub](https://github.com/googleworkspace)
+- [Status](https://www.google.com/appsstatus/dashboard/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 46.2** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 55.6 |
+| Contract governance | 9.8 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 51.2 |
+| Access clarity | 39.5 |
+
+**Agent readiness 20.7** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | partial |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 30.4** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/google-calendar/](https://apis.io/providers/google-calendar/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Google Calendar: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/google-calendar/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
